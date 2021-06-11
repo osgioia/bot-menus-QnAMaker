@@ -32,8 +32,11 @@ namespace Microsoft.BotBuilderSamples
         private readonly ApplicationContext _context;
         private readonly string LOGICALIS_DOMAIN = "@la.logicalis.com";
 
-        private static string debugName = "Matias Cirillo";
-        private static string debugMail = "matias.cirillo@LA.LOGICALIS.COM";
+        private static string debugName = "Lucas Rodriguez";
+        private static string debugMail = "lucas.rodriguez@LA.LOGICALIS.COM";
+
+        private readonly string _blobImagesUrl;
+        private readonly string _microsoftAppId;
 
         public class MultipleQuestionsAnswer
         {
@@ -62,6 +65,8 @@ namespace Microsoft.BotBuilderSamples
             _context = context;
             _qnaReceived = qnaReceived;
             _reportedQuestion = repostedQuestion;
+            _blobImagesUrl = configuration["BlobImagesUrl"];
+            _microsoftAppId = configuration["MicrosoftAppId"];
         }
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
@@ -230,6 +235,9 @@ namespace Microsoft.BotBuilderSamples
                         adaptiveCard = adaptiveCard.Replace("$(answer)", answer);
                         adaptiveCard = adaptiveCard.Replace("$(reportMsg)", reportMsg);
                     }
+                    adaptiveCard = adaptiveCard.Replace("$(blobUrl)", _blobImagesUrl);
+                    adaptiveCard = adaptiveCard.Replace("$(appID)", _microsoftAppId);
+                    
                     return new Attachment()
                     {
                         ContentType = "application/vnd.microsoft.card.adaptive",
@@ -248,6 +256,7 @@ namespace Microsoft.BotBuilderSamples
                 using (var reader = new StreamReader(stream))
                 {
                     var adaptiveCard = reader.ReadToEnd();
+                    adaptiveCard = adaptiveCard.Replace("$(blobUrl)", _blobImagesUrl);
                     return new Attachment()
                     {
                         ContentType = "application/vnd.microsoft.card.adaptive",
@@ -289,6 +298,7 @@ namespace Microsoft.BotBuilderSamples
                     adaptiveCard = adaptiveCard.Replace("$(reportMsg)", reportQuestionsMsg);
                     adaptiveCard = adaptiveCard.Replace("$(value)", bookingChoices.FirstOrDefault().Value);
                     adaptiveCard = adaptiveCard.Replace("$(answers)", string.Join("| ", toReport));
+                    adaptiveCard = adaptiveCard.Replace("$(blobUrl)", _blobImagesUrl);
                     return new Attachment()
                     {
                         ContentType = "application/vnd.microsoft.card.adaptive",

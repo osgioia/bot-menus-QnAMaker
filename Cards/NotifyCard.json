@@ -12,7 +12,7 @@
           "items": [
             {
               "type": "Image",
-              "url": "https://botdepot.blob.core.windows.net/imagenes-desky/logicalis-logo.png",
+              "url": "$(blobUrl)/card-logo.png",
               "size": "Large"
             }
           ],
@@ -24,6 +24,26 @@
       "type": "TextBlock",
       "wrap": true,
       "text": "$(notify)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Puedes compartir el siguiente link con otras personas de tu empresa así puedo ayudarles también: https://teams.microsoft.com/l/chat/0/0?users=28:$(appID)",
+              "isSubtle": true,
+              "wrap": true,
+              "spacing": "Small",
+              "size": "Small"
+            }
+          ],
+          "width": "stretch"
+        }
+      ],
       "separator": true
     }
   ]

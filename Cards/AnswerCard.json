@@ -12,7 +12,7 @@
           "items": [
             {
               "type": "Image",
-              "url": "https://botdepot.blob.core.windows.net/imagenes-desky/logicalis-logo.png",
+              "url": "$(blobUrl)/card-logo.png",
               "size": "Large"
             }
           ],
