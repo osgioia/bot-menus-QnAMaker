@@ -53,6 +53,8 @@ namespace Microsoft.BotBuilderSamples
 
             services.AddScoped<ValidDomainsServices, ValidDomainsServicesImpl>();
 
+            services.AddScoped<AppShortLinkServices, AppShortLinkServicesImpl>();
+
             services.AddSingleton<ContextUserService>();
 
         }

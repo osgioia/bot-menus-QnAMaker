@@ -30,6 +30,7 @@ namespace Microsoft.BotBuilderSamples
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly QnAReceivedServices _qnaReceivedServices;
         private readonly ReportedQuestionServices _reportedQuestionServices;
+        private readonly AppShortLinkServices _appShortLinkServices;
         private readonly ContextUserService _contextUserService;
         private readonly ValidDomainsServices _validDomainsServices;
         private readonly ApplicationContext _context;
@@ -64,6 +65,7 @@ namespace Microsoft.BotBuilderSamples
                         IHttpClientFactory httpClientFactory, 
                         QnAReceivedServices qnaReceivedServices, 
                         ReportedQuestionServices repostedQuestionServices,
+                        AppShortLinkServices appShortLinkServices,
                         ContextUserService contextUserService,
                         ValidDomainsServices validDomainsServices, 
                         ApplicationContext context)
@@ -74,6 +76,7 @@ namespace Microsoft.BotBuilderSamples
             _context = context;
             _qnaReceivedServices = qnaReceivedServices;
             _reportedQuestionServices = repostedQuestionServices;
+            _appShortLinkServices = appShortLinkServices;
             _validDomainsServices = validDomainsServices;
             _contextUserService = contextUserService;
             _blobImagesUrl = configuration["BlobImagesUrl"];
@@ -125,6 +128,9 @@ namespace Microsoft.BotBuilderSamples
                 null,
                 httpClient);
 
+
+                string appUrlMsTeams = _appShortLinkServices.getAppUrlMsTeams(_microsoftAppId);
+
                 _logger.LogInformation("Calling QnA Maker");
 
                 if (_validDomainsServices.isValidDomain(userDetails.UserEmail.ToLower().Split("@")[1]))
@@ -135,7 +141,7 @@ namespace Microsoft.BotBuilderSamples
                     {
                         MultipleQuestionsAnswer choosenQuestion = JsonConvert.DeserializeObject<MultipleQuestionsAnswer>(turnContext.Activity.Value.ToString());
                         SaveQnA(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], float.Parse(choosenQuestion.choosenQuestion.Split("|")[1]), choosenQuestion.choosenQuestion.Split("|")[2], userDetails);
-                        bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], reportMsg) };
+                        bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], reportMsg, appUrlMsTeams) };
                         await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                     }
 
@@ -165,13 +171,13 @@ namespace Microsoft.BotBuilderSamples
                                                                 .Replace("{helpInfo}", helpInfo);
                                 SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
 
-                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg) };
+                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg, appUrlMsTeams) };
                                 await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                             }
                             else if (response.Length > 0 && (response[0].Score >= 0.90 || response.Length == 1))
                             {
                                 SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, response[0].Source, userDetails);
-                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg) };
+                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg, appUrlMsTeams) };
                                 await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                             }
                             else if (response.Length > 1)
@@ -193,14 +199,14 @@ namespace Microsoft.BotBuilderSamples
                             }
                             else
                             {
-                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswer[0].Answer, null) };
+                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswer[0].Answer, null, appUrlMsTeams) };
                                 await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                             }
 
                         }
                         else
                         {
-                            bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswerMsg, null) };
+                            bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswerMsg, null, appUrlMsTeams) };
                             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                         }
                     }
@@ -212,7 +218,7 @@ namespace Microsoft.BotBuilderSamples
             }
                 
         }
-        private Attachment AnswerCardAdaptiveCardAttachment(string question, string answer, string reportMsg)
+        private Attachment AnswerCardAdaptiveCardAttachment(string question, string answer, string reportMsg, string appLink)
         {
             var cardResourcePath = "QnABot.Cards.AnswerCard.json";
             if (question == null)
@@ -231,7 +237,7 @@ namespace Microsoft.BotBuilderSamples
                         adaptiveCard = adaptiveCard.Replace("$(reportMsg)", reportMsg);
                     }
                     adaptiveCard = adaptiveCard.Replace("$(blobUrl)", _blobImagesUrl);
-                    adaptiveCard = adaptiveCard.Replace("$(appID)", _microsoftAppId);
+                    adaptiveCard = adaptiveCard.Replace("$(appLink)", appLink);
                     
                     return new Attachment()
                     {

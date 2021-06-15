@@ -12,8 +12,8 @@ namespace QnABot
 
         public DbSet<UserReportedQuestion> UserReportedQuestion { get; set; }
         public DbSet<UserQnAReceived> UserQnAReceived { get; set; }
-
         public DbSet<ValidDomains> ValidDomains { get; set; }
+        public DbSet<AppShortLink> AppShortLink { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

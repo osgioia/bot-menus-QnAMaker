@@ -34,7 +34,7 @@
           "items": [
             {
               "type": "TextBlock",
-              "text": "Puedes compartir el siguiente link con otras personas de tu empresa así puedo ayudarles también: https://teams.microsoft.com/l/chat/0/0?users=28:$(appID)",
+              "text": "Puedes compartir el siguiente link con otras personas de tu empresa así puedo ayudarles también: $(appLink)",
               "isSubtle": true,
               "wrap": true,
               "spacing": "Small",
