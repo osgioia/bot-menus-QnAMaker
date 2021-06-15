@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using QnABot;
+using QnABot.ContextServices;
 using QnABot.Models;
 using QnABot.Services;
 
@@ -27,10 +28,11 @@ namespace Microsoft.BotBuilderSamples
         private readonly IConfiguration _configuration;
         private readonly ILogger<QnABot> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly QnAReceivedSendServices _qnaReceived;
-        private readonly ReportedQuestionSendServices _reportedQuestion;
+        private readonly QnAReceivedServices _qnaReceivedServices;
+        private readonly ReportedQuestionServices _reportedQuestionServices;
+        private readonly ContextUserService _contextUserService;
+        private readonly ValidDomainsServices _validDomainsServices;
         private readonly ApplicationContext _context;
-        private readonly string LOGICALIS_DOMAIN = "@la.logicalis.com";
 
         private static string debugName = "Lucas Rodriguez";
         private static string debugMail = "lucas.rodriguez@LA.LOGICALIS.COM";
@@ -57,14 +59,23 @@ namespace Microsoft.BotBuilderSamples
         private readonly string reportQuestionsMsg = "Sí ninguna de las preguntas es la que buscabas podes reportarlo y así poder mejorar tu experiencia. Gracias!";
         private readonly string noAnswerMsg = "Todavía no tengo información sobre eso, pero sigo aprendiendo! \r\n Mientras tanto, podrías ver si la respuesta que precisas está acá: [https://support.microsoft.com/es-es/](https://support.microsoft.com/es-es/)";
 
-        public QnABot(IConfiguration configuration, ILogger<QnABot> logger, IHttpClientFactory httpClientFactory, QnAReceivedSendServices qnaReceived, ReportedQuestionSendServices repostedQuestion, ApplicationContext context)
+        public QnABot(  IConfiguration configuration, 
+                        ILogger<QnABot> logger, 
+                        IHttpClientFactory httpClientFactory, 
+                        QnAReceivedServices qnaReceivedServices, 
+                        ReportedQuestionServices repostedQuestionServices,
+                        ContextUserService contextUserService,
+                        ValidDomainsServices validDomainsServices, 
+                        ApplicationContext context)
         {
             _configuration = configuration;
             _logger = logger;
             _httpClientFactory = httpClientFactory;
             _context = context;
-            _qnaReceived = qnaReceived;
-            _reportedQuestion = repostedQuestion;
+            _qnaReceivedServices = qnaReceivedServices;
+            _reportedQuestionServices = repostedQuestionServices;
+            _validDomainsServices = validDomainsServices;
+            _contextUserService = contextUserService;
             _blobImagesUrl = configuration["BlobImagesUrl"];
             _microsoftAppId = configuration["MicrosoftAppId"];
         }
@@ -84,32 +95,13 @@ namespace Microsoft.BotBuilderSamples
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             UserReportedQuestion userReportedQuestion = new UserReportedQuestion();
-            UserDetails userDetails = new UserDetails();
-            switch (turnContext.Activity.ChannelId)
-            {
-                case "emulator":
-                    userDetails.Id = "1";
-                    userDetails.UserName = debugName;
-                    userDetails.UserEmail = debugMail;
-                    break;
-                case "webchat":
-                    userDetails.Id = "1";
-                    userDetails.UserName = debugName;
-                    userDetails.UserEmail = debugMail;
-                    break;
-                default:  //MS-TEAMS
-                    var member = await TeamsInfo.GetMemberAsync(turnContext, turnContext.Activity.From.Id, cancellationToken);
-                    userDetails.Id = member.Id;
-                    userDetails.UserName = member.Name;
-                    userDetails.UserEmail = member.Email;
-                    break;
-            }
+            UserDetails userDetails = await _contextUserService.getUserDetails(turnContext, cancellationToken);
 
             if (turnContext.Activity is Activity activity && activity.Value != null
                 && ((dynamic)activity.Value).question is JValue question
                 && ((dynamic)activity.Value).answer is JValue answer)
             {
-                _reportedQuestion.save(new UserReportedQuestion
+                _reportedQuestionServices.save(new UserReportedQuestion
                 {
                     UserId = userDetails.Id,
                     UserEmail = userDetails.UserEmail,
@@ -135,7 +127,7 @@ namespace Microsoft.BotBuilderSamples
 
                 _logger.LogInformation("Calling QnA Maker");
 
-                if (userDetails.UserEmail.ToLower().EndsWith(LOGICALIS_DOMAIN))
+                if (_validDomainsServices.isValidDomain(userDetails.UserEmail.ToLower().Split("@")[1]))
                 {
                     var options = new QnAMakerOptions { Top = 3 };
                     List<Attachment> bookApprovedCard;
@@ -268,7 +260,7 @@ namespace Microsoft.BotBuilderSamples
 
         private void SaveQnA(string question, string answer, float score, UserDetails userDetails)
         {
-            _qnaReceived.save(new UserQnAReceived
+            _qnaReceivedServices.save(new UserQnAReceived
             {
                 UserId = userDetails.Id,
                 UserEmail = userDetails.UserEmail,

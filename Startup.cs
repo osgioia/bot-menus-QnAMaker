@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using QnABot;
+using QnABot.ContextServices;
 using QnABot.Services;
 using QnABot.Services.Implementations;
 
@@ -46,9 +47,13 @@ namespace Microsoft.BotBuilderSamples
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
             services.AddTransient<IBot, QnABot>();
 
-            services.AddScoped<QnAReceivedSendServices, QnAReceivedSendServicesImpl>();
+            services.AddScoped<QnAReceivedServices, QnAReceivedServicesImpl>();
 
-            services.AddScoped<ReportedQuestionSendServices, ReportedQuestionSendServicesImpl>();
+            services.AddScoped<ReportedQuestionServices, ReportedQuestionServicesImpl>();
+
+            services.AddScoped<ValidDomainsServices, ValidDomainsServicesImpl>();
+
+            services.AddSingleton<ContextUserService>();
 
         }
 

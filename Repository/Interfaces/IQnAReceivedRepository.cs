@@ -2,7 +2,7 @@
 
 namespace QnABot.Repository.Implementations
 {
-    public interface IQnAReceivedSendRepository : IGenericRepository<UserQnAReceived>
+    public interface IQnAReceivedRepository : IGenericRepository<UserQnAReceived>
     {
 
     }
