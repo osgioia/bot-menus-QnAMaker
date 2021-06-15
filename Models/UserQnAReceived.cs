@@ -9,6 +9,7 @@ namespace QnABot.Models
         public string UserEmail { get; set; }
         public string Question { get; set; }
         public string AnswerShow { get; set; }
+        public string Source { get; set; }
         public DateTime DateCreated { get; set; }
         public float Score { get; set; }
     }

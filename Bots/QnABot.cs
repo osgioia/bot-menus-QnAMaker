@@ -134,7 +134,7 @@ namespace Microsoft.BotBuilderSamples
                     if (turnContext.Activity.Value != null)
                     {
                         MultipleQuestionsAnswer choosenQuestion = JsonConvert.DeserializeObject<MultipleQuestionsAnswer>(turnContext.Activity.Value.ToString());
-                        SaveQnA(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], float.Parse(choosenQuestion.choosenQuestion.Split("|")[1]), userDetails);
+                        SaveQnA(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], float.Parse(choosenQuestion.choosenQuestion.Split("|")[1]), choosenQuestion.choosenQuestion.Split("|")[2], userDetails);
                         bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], reportMsg) };
                         await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                     }
@@ -163,14 +163,14 @@ namespace Microsoft.BotBuilderSamples
                             {
                                 string answerWelcome = response[0].Answer.Replace("{name}", userDetails.UserName)
                                                                 .Replace("{helpInfo}", helpInfo);
-                                SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, userDetails);
+                                SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
 
                                 bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg) };
                                 await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                             }
                             else if (response.Length > 0 && (response[0].Score >= 0.90 || response.Length == 1))
                             {
-                                SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, userDetails);
+                                SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, response[0].Source, userDetails);
                                 bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg) };
                                 await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
                             }
@@ -178,12 +178,15 @@ namespace Microsoft.BotBuilderSamples
                             {
                                 Dictionary<string, string> bookingChoices = new Dictionary<string, string>();
                                 string questions = "";
+                                string source = "";
                                 for (int i = 0; i < response.Length; i++)
                                 {
-                                    bookingChoices.Add(response[i].Questions[0].Split("|")[0], response[i].Answer + "|" + Math.Round(response[i].Score, 2).ToString());
+                                    bookingChoices.Add(response[i].Questions[0].Split("|")[0], response[i].Answer + "|" + Math.Round(response[i].Score, 2).ToString() + "|" + response[i].Source);
                                     questions = questions + response[i].Questions[0] + " | ";
+
+                                    source = source + response[i].Source + " | ";
                                 }
-                                SaveQnA(turnContext.Activity.Text, questions, response[0].Score, userDetails);
+                                SaveQnA(turnContext.Activity.Text, questions, response[0].Score, source, userDetails);
                                 bookApprovedCard = new List<Attachment> { CreateSelectQuestionCardAttachment(bookingChoices, turnContext.Activity.Text, reportQuestionsMsg) };
 
                                 await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
@@ -258,7 +261,7 @@ namespace Microsoft.BotBuilderSamples
             }
         }
 
-        private void SaveQnA(string question, string answer, float score, UserDetails userDetails)
+        private void SaveQnA(string question, string answer, float score, string source, UserDetails userDetails)
         {
             _qnaReceivedServices.save(new UserQnAReceived
             {
@@ -266,6 +269,7 @@ namespace Microsoft.BotBuilderSamples
                 UserEmail = userDetails.UserEmail,
                 Question = question,
                 AnswerShow = answer,
+                Source = source,
                 DateCreated = DateTime.Now,
                 Score = score
             });
