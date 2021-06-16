@@ -5,7 +5,7 @@
   "body": [
     {
       "type": "Image",
-      "url": "$(blobUrl)/welcome.png",
+      "url": "$(blobUrl)/welcome.jpg",
       "size": "stretch"
     }
   ]
