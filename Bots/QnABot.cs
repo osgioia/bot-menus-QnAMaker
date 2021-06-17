@@ -10,7 +10,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.AI.QnA;
-using Microsoft.Bot.Builder.Teams;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -97,7 +96,6 @@ namespace Microsoft.BotBuilderSamples
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-            UserReportedQuestion userReportedQuestion = new UserReportedQuestion();
             UserDetails userDetails = await _contextUserService.getUserDetails(turnContext, cancellationToken);
 
             if (turnContext.Activity is Activity activity && activity.Value != null
@@ -117,107 +115,151 @@ namespace Microsoft.BotBuilderSamples
             }
             else
             {
-                var httpClient = _httpClientFactory.CreateClient();
-
-                var qnaMaker = new QnAMaker(new QnAMakerEndpoint
-                {
-                    KnowledgeBaseId = _configuration["QnAKnowledgebaseId"],
-                    EndpointKey = _configuration["QnAEndpointKey"],
-                    Host = _configuration["QnAEndpointHostName"]
-                },
-                null,
-                httpClient);
-
-
-                string appUrlMsTeams = _appShortLinkServices.getAppUrlMsTeams(_microsoftAppId);
-
-                _logger.LogInformation("Calling QnA Maker");
-
                 if (_validDomainsServices.isValidDomain(userDetails.UserEmail.ToLower().Split("@")[1]))
                 {
-                    var options = new QnAMakerOptions { Top = 3 };
-                    List<Attachment> bookApprovedCard;
-                    if (turnContext.Activity.Value != null)
-                    {
-                        MultipleQuestionsAnswer choosenQuestion = JsonConvert.DeserializeObject<MultipleQuestionsAnswer>(turnContext.Activity.Value.ToString());
-                        SaveQnA(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], float.Parse(choosenQuestion.choosenQuestion.Split("|")[1]), choosenQuestion.choosenQuestion.Split("|")[2], userDetails);
-                        bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], reportMsg, appUrlMsTeams) };
-                        await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
-                    }
-
-                    else if (turnContext.Activity.Text.ToLower() == "ayuda")
-                    {
-                        await turnContext.SendActivityAsync(MessageFactory.Text($"{helpInfo}"), cancellationToken);
-                    }
-                    else if (turnContext.Activity.Text.ToLower().Contains("gracias"))
-                    {
-                        await turnContext.SendActivityAsync(MessageFactory.Text("Espero haber podido ayudarte 😄\n\n Nos vemos !"), cancellationToken);
-                    }
-                    else
-                    {
-                        // The actual call to the QnA Maker service.
-                        QueryResult[] request = await qnaMaker.GetAnswersAsync(turnContext, options);
-
-                        var response = (from r in request where r.Score >= 0.5 && (r.Source.ToLower().Contains("chatbot")
-                                        || r.Source.ToLower().Contains("editorial")
-                                        || r.Source.ToLower().Contains("saludos"))select r).ToArray();
-                        var noAnswer = (from r in request where r.Score >= 0.7 && r.Source.ToLower().Contains("sinrespuesta") select r).ToArray();
-                        //var options;
-                        if (request != null && (response.Length > 0 || noAnswer.Length > 0))
-                        {
-                            if (response.Length > 0 && response[0].Source.ToLower().Contains("saludo"))
-                            {
-                                string answerWelcome = response[0].Answer.Replace("{name}", userDetails.UserName)
-                                                                .Replace("{helpInfo}", helpInfo);
-                                SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
-
-                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg, appUrlMsTeams) };
-                                await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
-                            }
-                            else if (response.Length > 0 && (response[0].Score >= 0.90 || response.Length == 1))
-                            {
-                                SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, response[0].Source, userDetails);
-                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg, appUrlMsTeams) };
-                                await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
-                            }
-                            else if (response.Length > 1)
-                            {
-                                Dictionary<string, string> bookingChoices = new Dictionary<string, string>();
-                                string questions = "";
-                                string source = "";
-                                for (int i = 0; i < response.Length; i++)
-                                {
-                                    bookingChoices.Add(response[i].Questions[0].Split("|")[0], response[i].Answer + "|" + Math.Round(response[i].Score, 2).ToString() + "|" + response[i].Source);
-                                    questions = questions + response[i].Questions[0] + " | ";
-
-                                    source = source + response[i].Source + " | ";
-                                }
-                                SaveQnA(turnContext.Activity.Text, questions, response[0].Score, source, userDetails);
-                                bookApprovedCard = new List<Attachment> { CreateSelectQuestionCardAttachment(bookingChoices, turnContext.Activity.Text, reportQuestionsMsg) };
-
-                                await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
-                            }
-                            else
-                            {
-                                bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswer[0].Answer, null, appUrlMsTeams) };
-                                await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
-                            }
-
-                        }
-                        else
-                        {
-                            bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswerMsg, null, appUrlMsTeams) };
-                            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
-                        }
-                    }
+                    await interactWithUser(turnContext, userDetails, cancellationToken);
                 }
                 else
                 {
                     await turnContext.SendActivityAsync(MessageFactory.Text("No esta autorizado a utilizar el servicio de Logicalis."), cancellationToken);
                 }
             }
-                
+
         }
+
+        private async Task interactWithUser(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, CancellationToken cancellationToken)
+        {
+            string appUrlMsTeams = _appShortLinkServices.getAppUrlMsTeams(_microsoftAppId);
+
+            if (turnContext.Activity.Value != null)
+            {
+                await showAnswerFromChosenQuestionBetweenMultiplesQuestions(turnContext, userDetails, appUrlMsTeams);
+            }
+            else if (turnContext.Activity.Text.ToLower() == "ayuda")
+            {
+                await askingForHelp(turnContext, cancellationToken);
+            }
+            else if (turnContext.Activity.Text.ToLower().Contains("gracias"))
+            {
+                await youAreWelcome(turnContext, cancellationToken);
+            }
+            else
+            {
+                await askToQnA(turnContext, userDetails, appUrlMsTeams);
+            }
+        }
+
+        private async Task showAnswerFromChosenQuestionBetweenMultiplesQuestions(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, string appUrlMsTeams)
+        {
+            MultipleQuestionsAnswer choosenQuestion = JsonConvert.DeserializeObject<MultipleQuestionsAnswer>(turnContext.Activity.Value.ToString());
+            SaveQnA(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], float.Parse(choosenQuestion.choosenQuestion.Split("|")[1]), choosenQuestion.choosenQuestion.Split("|")[2], userDetails);
+            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(choosenQuestion.question, choosenQuestion.choosenQuestion.Split("|")[0], reportMsg, appUrlMsTeams) };
+            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
+        }
+
+        private async Task askToQnA(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, string appUrlMsTeams)
+        {
+            var httpClient = _httpClientFactory.CreateClient();
+
+            QnAMaker qnaMaker = new QnAMaker(new QnAMakerEndpoint
+            {
+                KnowledgeBaseId = _configuration["QnAKnowledgebaseId"],
+                EndpointKey = _configuration["QnAEndpointKey"],
+                Host = _configuration["QnAEndpointHostName"]
+            },
+            null,
+            httpClient);
+
+            _logger.LogInformation("Calling QnA Maker");
+
+            var options = new QnAMakerOptions { Top = 3 };
+
+            // The actual call to the QnA Maker service.
+            QueryResult[] request = await qnaMaker.GetAnswersAsync(turnContext, options);
+
+            var response = (from r in request
+                            where r.Score >= 0.5 && (r.Source.ToLower().Contains("chatbot")
+                              || r.Source.ToLower().Contains("editorial")
+                              || r.Source.ToLower().Contains("saludos"))
+                            select r).ToArray();
+            var noAnswer = (from r in request where r.Score >= 0.7 && r.Source.ToLower().Contains("sinrespuesta") select r).ToArray();
+            //var options;
+            if (request != null && (response.Length > 0 || noAnswer.Length > 0))
+            {
+                if (response.Length > 0 && response[0].Source.ToLower().Contains("saludo"))
+                {
+                    await greeting(turnContext, userDetails, appUrlMsTeams, response);
+                }
+                else if (response.Length > 0 && (response[0].Score >= 0.90 || response.Length == 1))
+                {
+                    await showBestAnswer(turnContext, userDetails, appUrlMsTeams, response);
+                }
+                else if (response.Length > 1)
+                {
+                    await showMultiplesAnswers(turnContext, userDetails, response);
+                }
+                else
+                {
+                    await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswer[0].Answer);
+                }
+            }
+            else
+            {
+                await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswerMsg);
+            }
+        }
+
+        private async Task notAnswerToThatQuestion(ITurnContext<IMessageActivity> turnContext, string appUrlMsTeams, string noAnswer)
+        {
+            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswer, null, appUrlMsTeams) };
+            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
+        }
+
+        private async Task greeting(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, string appUrlMsTeams, QueryResult[] response)
+        {
+            string answerWelcome = response[0].Answer.Replace("{name}", userDetails.UserName)
+           .Replace("{helpInfo}", helpInfo);
+            SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
+
+            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg, appUrlMsTeams) };
+            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
+        }
+
+        private async Task showBestAnswer(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, string appUrlMsTeams, QueryResult[] response)
+        {
+            SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, response[0].Source, userDetails);
+            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg, appUrlMsTeams) };
+            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
+        }
+
+        private async Task showMultiplesAnswers(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, QueryResult[] response)
+        {
+            Dictionary<string, string> bookingChoices = new Dictionary<string, string>();
+            string questions = "";
+            string source = "";
+            for (int i = 0; i < response.Length; i++)
+            {
+                bookingChoices.Add(response[i].Questions[0].Split("|")[0], response[i].Answer + "|" + Math.Round(response[i].Score, 2).ToString() + "|" + response[i].Source);
+                questions = questions + response[i].Questions[0] + " | ";
+
+                source = source + response[i].Source + " | ";
+            }
+            SaveQnA(turnContext.Activity.Text, questions, response[0].Score, source, userDetails);
+            List<Attachment> bookApprovedCard = new List<Attachment> { CreateSelectQuestionCardAttachment(bookingChoices, turnContext.Activity.Text, reportQuestionsMsg) };
+
+            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
+        }
+
+        private static async Task youAreWelcome(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            await turnContext.SendActivityAsync(MessageFactory.Text("Espero haber podido ayudarte 😄\n\n Nos vemos !"), cancellationToken);
+        }
+
+        private async Task askingForHelp(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            await turnContext.SendActivityAsync(MessageFactory.Text($"{helpInfo}"), cancellationToken);
+        }
+
         private Attachment AnswerCardAdaptiveCardAttachment(string question, string answer, string reportMsg, string appLink)
         {
             var cardResourcePath = "QnABot.Cards.AnswerCard.json";
@@ -231,7 +273,8 @@ namespace Microsoft.BotBuilderSamples
                     var adaptiveCard = reader.ReadToEnd();
                     if (question == null)
                         adaptiveCard = adaptiveCard.Replace("$(notify)", answer);
-                    else {
+                    else
+                    {
                         adaptiveCard = adaptiveCard.Replace("$(question)", question);
                         adaptiveCard = adaptiveCard.Replace("$(answer)", answer);
                         adaptiveCard = adaptiveCard.Replace("$(reportMsg)", reportMsg);
