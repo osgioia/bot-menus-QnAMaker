@@ -1,11 +1,5 @@
 #!/bin/bash
 
-APP_NAME=bot-adopcion-msteams-$CLIENTE-prod
-RESOURCE_GROUP=rg-prod-Sally-southbr
-SUBSCRIPTION_ID=259fbe6e-d5f6-445c-be5e-7461f7195c28
-CONTAINER_NAME="imagenes-$APP_NAME"
-STORAGE_ACCOUNT=botdepot
-
 MIN_CHARACTERS=4
 MAX_CHARACTERS=15
 CANT_PARAMETERS=1
@@ -13,6 +7,12 @@ CANT_PARAMETERS=1
 if [[ "$#" -eq "$CANT_PARAMETERS" && $1 =~ ^[a-zA-Z0-9\-]+$ && "${#1}" -ge "$MIN_CHARACTERS" && "${#1}" -le "$MAX_CHARACTERS" ]]
 then
   CLIENTE=$1
+
+  APP_NAME=bot-adopcion-msteams-$CLIENTE-prod
+  RESOURCE_GROUP=rg-prod-Sally-southbr
+  SUBSCRIPTION_ID=259fbe6e-d5f6-445c-be5e-7461f7195c28
+  CONTAINER_NAME="imagenes-$APP_NAME"
+  STORAGE_ACCOUNT=botdepot
 
   az account set --subscription $SUBSCRIPTION_ID
   #echo "Seleccionada la subscription con id: $SUBSCRIPTION_ID"
