@@ -31,7 +31,9 @@ namespace QnABot.Migrations
                     //bot-adopcion-msteams-prod
                     {2, "023825ee-9fc2-413c-904b-4ad3a7a37877", "https://bit.ly/2TkuORB" },
                     //harrymsteamsdemo
-                    {3, "c026e097-643f-4b95-a71e-887b339553f0", "https://bit.ly/35kNGma" }
+                    {3, "c026e097-643f-4b95-a71e-887b339553f0", "https://bit.ly/35kNGma" },
+                    //bot-adopcion-msteams-farma-similares-prod
+                    {4, "e5bd87eb-4415-4416-8bbf-62c1fa8e1d49", "https://bit.ly/3gCnNVp" }
                 }
              );
         }
