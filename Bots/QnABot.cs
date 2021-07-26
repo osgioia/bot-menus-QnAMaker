@@ -121,7 +121,9 @@ namespace Microsoft.BotBuilderSamples
                 }
                 else
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text("No esta autorizado a utilizar el servicio de Logicalis."), cancellationToken);
+                    string notAuthorize = "No esta autorizado a utilizar el servicio de Logicalis.";
+                    SaveQnA(turnContext.Activity.Text, notAuthorize, 0, "not_authorized", userDetails);
+                    await turnContext.SendActivityAsync(MessageFactory.Text(notAuthorize), cancellationToken);
                 }
             }
 
@@ -200,16 +202,31 @@ namespace Microsoft.BotBuilderSamples
                 }
                 else
                 {
-                    await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswer[0].Answer);
+                    string question = turnContext.Activity.Text;
+                    SaveQnA(question, noAnswer[0].Answer, noAnswer[0].Score, noAnswer[0].Source, userDetails);
+                    await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswer[0].Answer, noAnswer[0].Score, noAnswer[0].Source);
                 }
             }
             else
             {
-                await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswerMsg);
+                string answer = noAnswerMsg;
+                float score = 0;
+                string source = "not_match_source";
+
+                if (request != null && request.Length > 0)
+                {
+                    answer = request[0].Answer;
+                    score = request[0].Score;
+                    source = request[0].Source;
+                }
+
+                string question = turnContext.Activity.Text;
+                SaveQnA(question, answer, score, source, userDetails);
+                await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswerMsg, score, source);
             }
         }
 
-        private async Task notAnswerToThatQuestion(ITurnContext<IMessageActivity> turnContext, string appUrlMsTeams, string noAnswer)
+        private async Task notAnswerToThatQuestion(ITurnContext<IMessageActivity> turnContext, string appUrlMsTeams, string noAnswer, float score, string source)
         {
             List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, noAnswer, null, appUrlMsTeams) };
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
@@ -316,8 +333,8 @@ namespace Microsoft.BotBuilderSamples
             {
                 UserId = userDetails.Id,
                 UserEmail = userDetails.UserEmail,
-                Question = question,
-                AnswerShow = answer,
+                Question = question.TrimStart().TrimEnd(),
+                AnswerShow = answer.TrimStart().TrimEnd(),
                 Source = source,
                 DateCreated = DateTime.Now,
                 Score = score
