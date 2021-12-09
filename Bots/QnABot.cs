@@ -63,7 +63,7 @@ namespace Microsoft.BotBuilderSamples
                         $"\r\n* - Licencias y vacaciones\r\n" +
                         $"\r\n* - Solicitudes (anticipo, anticipos en cuotas\r\n" +
                         $"\r\n* - Certificados de trabajo\r\n" +
-                        $"\r\n* - Búsqeudas internas\r\n" +
+                        $"\r\n* - Búsquedas internas\r\n" +
                         $"\r\n* - Cambio de domicilio\r\n" +
                         $"\r\n* - Inscribirse a un curso\r\n" +
                         $"\r\n* - Formularios de Evaluación de Desempeño\r\n" +
