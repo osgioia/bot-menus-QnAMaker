@@ -1,0 +1,49 @@
+﻿{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(notify)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Puedes compartir el siguiente link con otras personas de tu empresa así puedo ayudarles también: $(appLink)",
+              "isSubtle": true,
+              "wrap": true,
+              "spacing": "Small",
+              "size": "Small"
+            }
+          ],
+          "width": "stretch"
+        }
+      ],
+      "separator": true
+    }
+  ]
+}
