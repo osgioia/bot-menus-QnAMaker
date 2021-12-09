@@ -58,17 +58,17 @@ namespace Microsoft.BotBuilderSamples
         private readonly string reportMsg = "Sí la respuesta no es lo que esperabas podes reportarla y así poder mejorar tu experiencia. Gracias!";
         private readonly string reportQuestionsMsg = "Sí ninguna de las preguntas es la que buscabas podes reportarlo y así poder mejorar tu experiencia. Gracias!";
         private readonly string noAnswerMsg = "Todavía no tengo información sobre eso, pero sigo aprendiendo! \r\n Mientras tanto, podrías ver si la respuesta que precisas está acá: [https://metrogasar.sharepoint.com/sites/mo/SitePages/SoluIntegrar.aspx](https://metrogasar.sharepoint.com/sites/mo/SitePages/SoluIntegrar.aspx)" +
-                        $"\r\n* Actualmente tengo información sobre los siguientes productos:\r\n" +
-                        $"\r\n* - Recibos de sueldos\r\n" +
-                        $"\r\n* - Licencias y vacaciones\r\n" +
-                        $"\r\n* - Solicitudes (anticipo, anticipos en cuotas\r\n" +
-                        $"\r\n* - Certificados de trabajo\r\n" +
-                        $"\r\n* - Búsquedas internas\r\n" +
-                        $"\r\n* - Cambio de domicilio\r\n" +
-                        $"\r\n* - Inscribirse a un curso\r\n" +
-                        $"\r\n* - Formularios de Evaluación de Desempeño\r\n" +
-                        $"\r\n* - Formularios Objetivos\r\n" +
-                        $"\r\n* Si tu consulta no se encuentra dentro de estos campos o no es suficiente la información que puedo darte, por favor comunicate con los chicos de RRHH.\r\n";
+                        $"\r\n Actualmente tengo información sobre los siguientes productos:\r\n" +
+                        $"\r\n* Recibos de sueldos\r\n" +
+                        $"\r\n* Licencias y vacaciones\r\n" +
+                        $"\r\n* Solicitudes (anticipo, anticipos en cuotas\r\n" +
+                        $"\r\n* Certificados de trabajo\r\n" +
+                        $"\r\n* Búsquedas internas\r\n" +
+                        $"\r\n* Cambio de domicilio\r\n" +
+                        $"\r\n* Inscribirse a un curso\r\n" +
+                        $"\r\n* Formularios de Evaluación de Desempeño\r\n" +
+                        $"\r\n* Formularios Objetivos\r\n" +
+                        $"\r\n Si tu consulta no se encuentra dentro de estos campos o no es suficiente la información que puedo darte, por favor comunicate con los chicos de RRHH.\r\n";
 
 
         public QnABot(  IConfiguration configuration, 
