@@ -190,18 +190,23 @@ namespace Microsoft.BotBuilderSamples
             {
                 if (response.Length > 0 && response[0].Source.ToLower().Contains("saludo"))
                 {
+                   
                     await greeting(turnContext, userDetails, appUrlMsTeams, response);
+                    
                 }
                 else if (response.Length > 0 && (response[0].Score >= 0.90 || response.Length == 1))
                 {
+                    
                     await showBestAnswer(turnContext, userDetails, appUrlMsTeams, response);
                 }
                 else if (response.Length > 1)
                 {
+                   
                     await showMultiplesAnswers(turnContext, userDetails, response);
                 }
                 else
                 {
+                    
                     string question = turnContext.Activity.Text;
                     SaveQnA(question, noAnswer[0].Answer, noAnswer[0].Score, noAnswer[0].Source, userDetails);
                     await notAnswerToThatQuestion(turnContext, appUrlMsTeams, noAnswer[0].Answer, noAnswer[0].Score, noAnswer[0].Source);
@@ -238,14 +243,25 @@ namespace Microsoft.BotBuilderSamples
            .Replace("{helpInfo}", helpInfo);
             SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
 
+       
+
             List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg, appUrlMsTeams) };
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 
         private async Task showBestAnswer(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, string appUrlMsTeams, QueryResult[] response)
         {
-            SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, response[0].Source, userDetails);
-            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg, appUrlMsTeams) };
+           
+            string answerWelcome = response[0].Answer.Replace("{name}", userDetails.UserName)
+           .Replace("{helpInfo}", helpInfo);
+
+            
+            //SaveQnA(turnContext.Activity.Text, response[0].Answer, response[0].Score, response[0].Source, userDetails);
+            SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
+            
+            //List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg, appUrlMsTeams) };
+            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, answerWelcome, reportMsg, appUrlMsTeams) };
+            
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 
