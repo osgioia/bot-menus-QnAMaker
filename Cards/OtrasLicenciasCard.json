@@ -1,142 +1,154 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.2",
-    "body": [
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
         {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "Image",
-                            "url": "$(blobUrl)/card-logo.jpg"
-                        }
-                    ],
-                    "verticalContentAlignment": "Center"
-                }
-            ]
-        },
-        {
-            "type": "TextBlock",
-            "wrap": true,
-            "text": "$(answer)",
-            "separator": true
-        },
-        {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Matrimonio"
-                                  },
-                                    "title": "Matrimonio"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Paternidad"
-                                  },
-                                    "title": "Paternidad"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Adopción"
-                                  },
-                                    "title": "Adopción"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Donación de sangre"
-                                  },
-                                    "title": "Donación de sangre"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Examen"
-                                  },
-                                    "title": "Examen"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Mudanza"
-                                  },
-                                    "title": "Mudanza"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Licencia jornada docente"
-                                  },
-                                    "title": "Licencia jornada docente"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Menú Inicial"
-                                  },
-                                    "title": "Menú Inicial"
-                                }
-                            ]
-                        }
-                    ],
-                    "width": "stretch",
-                    "spacing": "None",
-                    "horizontalAlignment": "Center"
-                }
-            ],
-            "style": "default",
-            "minHeight": "0px",
-            "spacing": "None",
-            "horizontalAlignment": "Center"
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
         }
-    ]
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Matrimonio"
+                  },
+                  "title": "Matrimonio"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Paternidad"
+                  },
+                  "title": "Paternidad"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Adopción"
+                  },
+                  "title": "Adopción"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Donación de sangre"
+                  },
+                  "title": "Donación de sangre"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Examen"
+                  },
+                  "title": "Examen"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Mudanza"
+                  },
+                  "title": "Mudanza"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Licencia jornada docente"
+                  },
+                  "title": "Licencia jornada docente"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Fallecimiento"
+                  },
+                  "title": "Fallecimiento"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú Inicial"
+                  },
+                  "title": "Menú Inicial"
+                }
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
 }

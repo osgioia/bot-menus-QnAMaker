@@ -34,8 +34,8 @@ namespace Microsoft.BotBuilderSamples
         private readonly ValidDomainsServices _validDomainsServices;
         private readonly ApplicationContext _context;
 
-        private static string debugName = "Lucas Rodriguez";
-        private static string debugMail = "lucas.rodriguez@LA.LOGICALIS.COM";
+        private static string debugName = "Osvaldo Gioia";
+        private static string debugMail = "osvaldo.gioia@LA.LOGICALIS.COM";
 
         private readonly string _blobImagesUrl;
         private readonly string _microsoftAppId;
@@ -364,43 +364,43 @@ namespace Microsoft.BotBuilderSamples
                     cardResourcePath = "QnABot.Cards.BancosReturn.json";
                     break;
                 case "Usuario de Red":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.MenúInicailReturn.json";
                     break;
                 case "Licencias":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.LicenciasCard.json";
                     break;
                 case "Vacaciones":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.LicenciasReturn.json";
                     break;
                 case "Otras Licencias":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.OtrasLicenciasCard.json";
                     break;
                 case "Otras Licencias2":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.OtrasLicencias_LicenciasReturn.json";
                     break;
                 case "Otras Licencias3":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.OtrasLicencias_LicenciasReturn.json";
                     break;
                 case "RRHH":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.RRHHCard.json";
                     break;
                 case "RRHH2":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.RRHHReturn.json";
                     break;
                 case "RRHH3":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.HorasExtras.json";
                     break;
                 case "RRHH4":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.RRHHReturn.json";
                     break;
                 case "Integrar":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.IntegrarCard.json";
                     break;
                 case "Beneficios":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.Beneficios.json";
                     break;
                 case "Beneficios2":
-                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    cardResourcePath = "QnABot.Cards.BeneficiosReturn.json";
                     break;
                 default:
                     cardResourcePath = "QnABot.Cards.BancosCard.json";

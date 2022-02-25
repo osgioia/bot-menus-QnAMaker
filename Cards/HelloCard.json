@@ -1,113 +1,125 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.2",
-    "body": [
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
         {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "Image",
-                            "url": "$(blobUrl)/card-logo.jpg"
-                        }
-                    ],
-                    "verticalContentAlignment": "Center"
-                }
-            ]
-        },
-        {
-            "type": "TextBlock",
-            "wrap": true,
-            "text": "$(answer)",
-            "separator": true
-        },
-        {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Bancos",
-                                  "data": {
-                                    "value": "Bancos"
-                                  }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Usuario de Red",
-                                  "data": {
-                                    "value": "Usuario de Red"
-                                  }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Licencias",
-                                  "data": {
-                                    "value": "Licencias"
-                                  }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "RRHH",
-                                  "data": {
-                                    "value": "RRHH"
-                                  }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Beneficios",
-                                  "data": {
-                                    "value": "Beneficios"
-                                  }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Salud Ocupacional",
-                                  "data": {
-                                    "value": "Salud Ocupacional"
-                                  }
-                                }
-                            ]
-                        }
-                    ],
-                    "width": "stretch"
-                }
-            ],
-            "separator": true
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
         }
-    ]
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Bancos",
+                  "data": {
+                    "value": "Bancos"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Usuario de Red",
+                  "data": {
+                    "value": "Usuario de Red"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Licencias",
+                  "data": {
+                    "value": "Licencias"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "RRHH",
+                  "data": {
+                    "value": "RRHH"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Integrar",
+                  "data": {
+                    "value": "Integrar"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Beneficios",
+                  "data": {
+                    "value": "Beneficios"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Salud Ocupacional",
+                  "data": {
+                    "value": "Salud Ocupacional"
+                  }
+                }
+              ]
+            }
+          ],
+          "width": "stretch"
+        }
+      ],
+      "separator": true
+    }
+  ]
 }

@@ -17,7 +17,7 @@ then
   az account set --subscription $SUBSCRIPTION_ID
   #echo "Seleccionada la subscription con id: $SUBSCRIPTION_ID"
 
-  APP_ID=$(az ad app create --display-name "Bot Adopcion MS Teams - $CLIENTE" --password "AtLeastSixteenCharacters_0" --available-to-other-tenants --query 'appId' -o tsv)
+  APP_ID=$(az ad app create --display-name "Bot MS Teams - $CLIENTE" --password "AtLeastSixteenCharacters_0" --available-to-other-tenants --query 'appId' -o tsv)
   #echo "MicrosoftAppId: $APP_ID"
 
   PASSWORD=$(az ad app credential reset --id $APP_ID --append  --query 'password' -o tsv)
@@ -53,7 +53,7 @@ then
 
   az webapp deployment source config-zip --resource-group "$RESOURCE_GROUP" \
                                          --name "$APP_NAME" \
-                                         --src ".\bot-adopcion-msteams.zip"
+                                         --src ".\bot-msteams.zip"
 else
   echo "Pasar el nombre del CLIENTE sin espacios y con un máximo de 15 caracteres alfanumerocos o -"
 fi
