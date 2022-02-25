@@ -1,0 +1,156 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "$(blobUrl)/card-logo.jpg"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "$(answer)",
+            "separator": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Credencial de Ingreso"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Horas extras"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Cierre Novedades para liquidación"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Fecha de Pago"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "Recibo digital"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "Aguinaldo"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Anticipos"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "Carga de GPPO"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "Evaluación Desempeño"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "Manú inicial"
+                                }
+                            ]
+                        }
+                    ],
+                    "width": "stretch",
+                    "spacing": "None",
+                    "horizontalAlignment": "Center"
+                }
+            ],
+            "style": "default",
+            "minHeight": "0px",
+            "spacing": "None",
+            "horizontalAlignment": "Center"
+        }
+    ]
+}
