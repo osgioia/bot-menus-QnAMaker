@@ -200,7 +200,7 @@ namespace Microsoft.BotBuilderSamples
             //var options;
             if (request != null && (response.Length > 0 || noAnswer.Length > 0))
             {
-                if (response.Length > 0 && response[0].Source.ToLower().Contains("saludo"))
+                if (response.Length > 0 && response[0].Source.ToLower().Contains("editorial"))
                 {
                    
                     await greeting(turnContext, userDetails, appUrlMsTeams, response);
@@ -257,7 +257,7 @@ namespace Microsoft.BotBuilderSamples
 
        
 
-            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(null, answerWelcome, reportMsg, appUrlMsTeams) };
+            List<Attachment> bookApprovedCard = new List<Attachment> { HelloCardAdaptiveCardAttachment(null, answerWelcome, reportMsg, appUrlMsTeams) };
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 
@@ -336,6 +336,25 @@ namespace Microsoft.BotBuilderSamples
             }
         }
 
+        private Attachment HelloCardAdaptiveCardAttachment(string question, string answer, string reportMsg, string appLink)
+        {
+            var cardResourcePath = "QnABot.Cards.HelloCard.json";
+
+            using (var stream = GetType().Assembly.GetManifestResourceStream(cardResourcePath))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    var adaptiveCard = reader.ReadToEnd();
+                    adaptiveCard = adaptiveCard.Replace("$(blobUrl)", _blobImagesUrl);
+                    adaptiveCard = adaptiveCard.Replace("$(answer)", answer);
+                    return new Attachment()
+                    {
+                        ContentType = "application/vnd.microsoft.card.adaptive",
+                        Content = JsonConvert.DeserializeObject(adaptiveCard),
+                    };
+                }
+            }
+        }
         private Attachment CreateAdaptiveCardAttachment()
         {
             var cardResourcePath = "QnABot.Cards.WelcomeCard.json";
