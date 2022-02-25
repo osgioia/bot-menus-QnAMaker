@@ -1,0 +1,93 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "$(blobUrl)/card-logo.jpg"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "$(answer)",
+            "separator": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Información personal"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Pedido de vacaciones"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Mis recibos"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "data": {
+                                        "question": "$(question)",
+                                        "answer": "$(answer)"
+                                    },
+                                    "title": "Menú incial"
+                                }
+                            ]
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ],
+            "separator": true
+        }
+    ]
+}
