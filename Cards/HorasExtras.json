@@ -36,10 +36,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Información para pago"
+                                  },
                                     "title": "Información para pago"
                                 }
                             ]
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Cálculo"
+                                  },
                                     "title": "Cálculo"
                                 }
                             ]
@@ -71,10 +69,13 @@
         {
             "type": "ActionSet",
             "actions": [
-                {
-                    "type": "Action.Submit",
-                    "title": "Franco Compensatorios"
+              {
+                "type": "Action.Submit",
+                "title": "Franco Compensatorios",
+                "data": {
+                  "value": "Franco Compensatorios"
                 }
+              }
             ]
         }
     ]

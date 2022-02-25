@@ -111,19 +111,18 @@ namespace Microsoft.BotBuilderSamples
             UserDetails userDetails = await _contextUserService.getUserDetails(turnContext, cancellationToken);
 
             if (turnContext.Activity is Activity activity && activity.Value != null
-                && ((dynamic)activity.Value).question is JValue question
-                && ((dynamic)activity.Value).answer is JValue answer)
+                && ((dynamic)activity.Value).value is JValue value
+              //  && ((dynamic)activity.Value).answer is JValue answer
+              )
             {
-                _reportedQuestionServices.save(new UserReportedQuestion
-                {
-                    UserId = userDetails.Id,
-                    UserEmail = userDetails.UserEmail,
-                    Question = (string)question.Value,
-                    AnswerShow = (string)answer.Value,
-                    DateCreated = DateTime.Now
-                });
 
-                await turnContext.SendActivityAsync(MessageFactory.Text("Gracias por tu feedback. ¿Te puedo ayudar en algo más?"), cancellationToken);
+                if (_validDomainsServices.isValidDomain(userDetails.UserEmail.ToLower().Split("@")[1]))
+                {
+
+                    turnContext.Activity.Value = null;
+                    turnContext.Activity.Text = value.Value.ToString();
+                    await interactWithUser(turnContext, userDetails, cancellationToken);
+                }
             }
             else
             {
@@ -193,6 +192,22 @@ namespace Microsoft.BotBuilderSamples
 
             var response = (from r in request
                             where r.Score >= 0.5 && (r.Source.ToLower().Contains("chatbot")
+                              || r.Source.ToLower().Contains("editorial")
+                              || r.Source.ToLower().Contains("bancos")
+                              || r.Source.ToLower().Contains("bancos2")
+                              || r.Source.ToLower().Contains("usuario de red")
+                              || r.Source.ToLower().Contains("licencias")
+                              || r.Source.ToLower().Contains("vacaciones")
+                              || r.Source.ToLower().Contains("otras licencias")
+                              || r.Source.ToLower().Contains("otras licencias2")
+                              || r.Source.ToLower().Contains("otras licencias3")
+                              || r.Source.ToLower().Contains("rrhh")
+                              || r.Source.ToLower().Contains("rrhh2")
+                              || r.Source.ToLower().Contains("rrhh3")
+                              || r.Source.ToLower().Contains("rrhh4")
+                              || r.Source.ToLower().Contains("integrar")
+                              || r.Source.ToLower().Contains("beneficios")
+                              || r.Source.ToLower().Contains("beneficios2")
                               || r.Source.ToLower().Contains("editorial")
                               || r.Source.ToLower().Contains("saludos"))
                             select r).ToArray();
@@ -272,7 +287,7 @@ namespace Microsoft.BotBuilderSamples
             SaveQnA(turnContext.Activity.Text, answerWelcome, response[0].Score, response[0].Source, userDetails);
             
             //List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, response[0].Answer, reportMsg, appUrlMsTeams) };
-            List<Attachment> bookApprovedCard = new List<Attachment> { AnswerCardAdaptiveCardAttachment(turnContext.Activity.Text, answerWelcome, reportMsg, appUrlMsTeams) };
+            List<Attachment> bookApprovedCard = new List<Attachment> { SelectAdaptiveCardAttachment(turnContext.Activity.Text, answerWelcome, reportMsg, appUrlMsTeams, response[0].Source) };
             
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
@@ -335,6 +350,89 @@ namespace Microsoft.BotBuilderSamples
                 }
             }
         }
+
+        private Attachment SelectAdaptiveCardAttachment(string question, string answer, string reportMsg, string appLink, string source)
+        {
+          
+            var cardResourcePath = "QnABot.Cards.AnswerCard.json";
+            switch (source)
+            {
+                case "Bancos":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Bancos2":
+                    cardResourcePath = "QnABot.Cards.BancosReturn.json";
+                    break;
+                case "Usuario de Red":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Licencias":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Vacaciones":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Otras Licencias":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Otras Licencias2":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Otras Licencias3":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "RRHH":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "RRHH2":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "RRHH3":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "RRHH4":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Integrar":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Beneficios":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                case "Beneficios2":
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+                default:
+                    cardResourcePath = "QnABot.Cards.BancosCard.json";
+                    break;
+            }
+
+
+            using (var stream = GetType().Assembly.GetManifestResourceStream(cardResourcePath))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    var adaptiveCard = reader.ReadToEnd();
+                    if (question == null)
+                        adaptiveCard = adaptiveCard.Replace("$(notify)", answer);
+                    else
+                    {
+                        adaptiveCard = adaptiveCard.Replace("$(question)", question);
+                        adaptiveCard = adaptiveCard.Replace("$(answer)", answer);
+                        adaptiveCard = adaptiveCard.Replace("$(reportMsg)", reportMsg);
+                    }
+                    adaptiveCard = adaptiveCard.Replace("$(blobUrl)", _blobImagesUrl);
+                    adaptiveCard = adaptiveCard.Replace("$(appLink)", appLink);
+
+                    return new Attachment()
+                    {
+                        ContentType = "application/vnd.microsoft.card.adaptive",
+                        Content = JsonConvert.DeserializeObject(adaptiveCard),
+                    };
+                }
+            }
+        }
+
 
         private Attachment HelloCardAdaptiveCardAttachment(string question, string answer, string reportMsg, string appLink)
         {

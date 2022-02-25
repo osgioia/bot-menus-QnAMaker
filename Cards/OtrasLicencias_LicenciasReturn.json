@@ -36,10 +36,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "NO"
+                                  },
                                     "title": "NO"
                                 }
                             ]
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Menú otras licencias"
+                                  },
                                     "title": "Menú otras licencias"
                                 }
                             ]
@@ -62,10 +60,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Menú Licencias"
+                                  },
                                     "title": "Menú Licencias"
                                 }
                             ]
@@ -84,10 +81,13 @@
         {
             "type": "ActionSet",
             "actions": [
-                {
-                    "type": "Action.Submit",
-                    "title": "Menú inicial"
+              {
+                "type": "Action.Submit",
+                "title": "Menú inicial",
+                "data": {
+                  "value": "Menú inicial"
                 }
+              }
             ]
         }
     ]

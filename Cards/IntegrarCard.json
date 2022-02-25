@@ -36,10 +36,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Información personal"
+                                  },
                                     "title": "Información personal"
                                 }
                             ]
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Pedido de vacaciones"
+                                  },
                                     "title": "Pedido de vacaciones"
                                 }
                             ]
@@ -62,10 +60,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Mis recibos"
+                                  },
                                     "title": "Mis recibos"
                                 }
                             ]
@@ -75,10 +72,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Menú incial"
+                                  },
                                     "title": "Menú incial"
                                 }
                             ]

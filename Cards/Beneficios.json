@@ -36,10 +36,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Terminal SUBE"
+                                  },
                                     "title": "Terminal SUBE"
                                 }
                             ]
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Cajero automático"
+                                  },
                                     "title": "Cajero automático"
                                 }
                             ]
@@ -62,10 +60,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Guardería"
+                                  },
                                     "title": "Guardería"
                                 }
                             ]
@@ -75,10 +72,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Abono telefonía móvil"
+                                  },
                                     "title": "Abono telefonía móvil"
                                 }
                             ]
@@ -88,10 +84,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Adelanto o cancelar en cuotas"
+                                  },
                                     "title": "Adelanto o cancelar en cuotas"
                                 }
                             ]
@@ -101,10 +96,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Días de estudio adicionales Jornada Docente"
+                                  },
                                     "title": "Días de estudio adicionales Jornada Docente"
                                 }
                             ]
@@ -114,10 +108,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Gastos Internet"
+                                  },
                                     "title": "Gastos Internet"
                                 }
                             ]
@@ -127,10 +120,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Mudanza"
+                                  },
                                     "title": "Mudanza"
                                 }
                             ]

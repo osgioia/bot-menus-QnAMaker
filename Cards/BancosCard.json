@@ -34,14 +34,13 @@
                         {
                             "type": "ActionSet",
                             "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
-                                    "title": "Cambiar de banco"
-                                }
+                              {
+                                "type": "Action.Submit",
+                                "data": {
+                                  "value": "Cambiar de banco"
+                                },
+                                "title": "Cambiar de banco"
+                              }
                             ]
                         },
                         {
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Cajero Automático"
+                                  },
                                     "title": "Cajero Automático"
                                 }
                             ]
@@ -62,10 +60,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Menú Inicial"
+                                  },
                                     "title": "Menú Inicial"
                                 }
                             ]

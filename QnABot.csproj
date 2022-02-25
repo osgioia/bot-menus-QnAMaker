@@ -8,16 +8,42 @@
 
   <ItemGroup>
     <Content Remove="Cards\AnswerCard.json" />
+    <Content Remove="Cards\BancosCard.json" />
+    <Content Remove="Cards\BancosReturn.json" />
+    <Content Remove="Cards\Beneficios.json" />
+    <Content Remove="Cards\BeneficiosReturn.json" />
     <Content Remove="Cards\HelloCard.json" />
+    <Content Remove="Cards\HorasExtras.json" />
+    <Content Remove="Cards\IntegrarCard.json" />
+    <Content Remove="Cards\LicenciasCard.json" />
+    <Content Remove="Cards\LicenciasReturn.json" />
+    <Content Remove="Cards\MenúInicailReturn.json" />
     <Content Remove="Cards\NotifyCard.json" />
+    <Content Remove="Cards\OtrasLicencias_LicenciasReturn.json" />
+    <Content Remove="Cards\OtrasLicenciasCard.json" />
+    <Content Remove="Cards\RRHHCard.json" />
+    <Content Remove="Cards\RRHHReturn.json" />
     <Content Remove="Cards\WelcomeCard.json" />
     <Content Remove="Cards\SelectQuestionCard.json" />
   </ItemGroup>
 
   <ItemGroup>
+   <EmbeddedResource Include="Cards\BancosCard.json" />
+    <EmbeddedResource Include="Cards\BancosReturn.json" />
+    <EmbeddedResource Include="Cards\Beneficios.json" />
+    <EmbeddedResource Include="Cards\BeneficiosReturn.json" />
     <EmbeddedResource Include="Cards\HelloCard.json" />
     <EmbeddedResource Include="Cards\AnswerCard.json" />
     <EmbeddedResource Include="Cards\NotifyCard.json" />
+    <EmbeddedResource Include="Cards\HorasExtras.json" />
+    <EmbeddedResource Include="Cards\IntegrarCard.json" />
+    <EmbeddedResource Include="Cards\LicenciasCard.json" />
+    <EmbeddedResource Include="Cards\LicenciasReturn.json" />
+    <EmbeddedResource Include="Cards\MenúInicailReturn.json" />
+    <EmbeddedResource Include="Cards\OtrasLicencias_LicenciasReturn.json" />
+    <EmbeddedResource Include="Cards\OtrasLicenciasCard.json" />
+    <EmbeddedResource Include="Cards\RRHHCard.json" />
+    <EmbeddedResource Include="Cards\RRHHReturn.json" />
     <EmbeddedResource Include="Cards\WelcomeCard.json" />
     <EmbeddedResource Include="Cards\SelectQuestionCard.json" />
   </ItemGroup>
@@ -37,7 +63,6 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
   </ItemGroup>
-
 
   <ItemGroup>
     <Content Update="appsettings.json">

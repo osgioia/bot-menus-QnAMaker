@@ -36,10 +36,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Matrimonio"
+                                  },
                                     "title": "Matrimonio"
                                 }
                             ]
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Paternidad"
+                                  },
                                     "title": "Paternidad"
                                 }
                             ]
@@ -62,10 +60,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Adopción"
+                                  },
                                     "title": "Adopción"
                                 }
                             ]
@@ -75,10 +72,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Donación de sangre"
+                                  },
                                     "title": "Donación de sangre"
                                 }
                             ]
@@ -88,10 +84,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Examen"
+                                  },
                                     "title": "Examen"
                                 }
                             ]
@@ -101,10 +96,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Mudanza"
+                                  },
                                     "title": "Mudanza"
                                 }
                             ]
@@ -114,10 +108,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Licencia jornada docente"
+                                  },
                                     "title": "Licencia jornada docente"
                                 }
                             ]
@@ -127,10 +120,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Menú Inicial"
+                                  },
                                     "title": "Menú Inicial"
                                 }
                             ]

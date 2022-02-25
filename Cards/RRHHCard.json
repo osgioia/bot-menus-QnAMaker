@@ -36,10 +36,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Credencial de Ingreso"
+                                  },
                                     "title": "Credencial de Ingreso"
                                 }
                             ]
@@ -49,10 +48,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Horas extras"
+                                  },
                                     "title": "Horas extras"
                                 }
                             ]
@@ -62,10 +60,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Cierre Novedades para liquidación"
+                                  },
                                     "title": "Cierre Novedades para liquidación"
                                 }
                             ]
@@ -75,10 +72,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Fecha de Pago"
+                                  },
                                     "title": "Fecha de Pago"
                                 }
                             ]
@@ -86,10 +82,25 @@
                         {
                             "type": "ActionSet",
                             "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Recibo digital"
+                              {
+                                "type": "Action.Submit",
+                                "title": "Recibo digital",
+                                "data": {
+                                  "value": "Recibo digital"
                                 }
+                              }
+                            ]
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                              {
+                                "type": "Action.Submit",
+                                "title": "Aguinaldo",
+                                "data": {
+                                  "value": "Aguinaldo"
+                                }
+                              }
                             ]
                         },
                         {
@@ -97,19 +108,9 @@
                             "actions": [
                                 {
                                     "type": "Action.Submit",
-                                    "title": "Aguinaldo"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "data": {
-                                        "question": "$(question)",
-                                        "answer": "$(answer)"
-                                    },
+                                  "data": {
+                                    "value": "Anticipos"
+                                  },
                                     "title": "Anticipos"
                                 }
                             ]
@@ -117,28 +118,37 @@
                         {
                             "type": "ActionSet",
                             "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Carga de GPPO"
+                              {
+                                "type": "Action.Submit",
+                                "title": "Carga de GPPO",
+                                "data": {
+                                  "value": "Carga de GPPO"
                                 }
+                              }
                             ]
                         },
                         {
                             "type": "ActionSet",
                             "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Evaluación Desempeño"
+                              {
+                                "type": "Action.Submit",
+                                "title": "Evaluación Desempeño",
+                                "data": {
+                                  "value": "Evaluación Desempeño"
                                 }
+                              }
                             ]
                         },
                         {
                             "type": "ActionSet",
                             "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "Manú inicial"
+                              {
+                                "type": "Action.Submit",
+                                "title": "Manú inicial",
+                                "data": {
+                                  "value": "Manú inicial"
                                 }
+                              }
                             ]
                         }
                     ],
