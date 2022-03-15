@@ -1,106 +1,87 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.2",
-    "body": [
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
         {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "Image",
-                            "url": "$(blobUrl)/card-logo.jpg"
-                        }
-                    ],
-                    "verticalContentAlignment": "Center"
-                }
-            ]
-        },
-        {
-            "type": "TextBlock",
-            "wrap": true,
-            "text": "$(answer)",
-            "separator": true
-        },
-        {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Vacaciones"
-                                  },
-                                    "title": "Vacaciones"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Otras licencias"
-                                  },
-                                    "title": "Otras licencias"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Enfermedad"
-                                  },
-                                    "title": "Enfermedad"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Accidente"
-                                  },
-                                    "title": "Accidente"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Menú Inicial"
-                                  },
-                                    "title": "Menú Inicial"
-                                }
-                            ]
-                        }
-                    ],
-                    "width": "stretch",
-                    "spacing": "None",
-                    "horizontalAlignment": "Center"
-                }
-            ],
-            "style": "default",
-            "minHeight": "0px",
-            "spacing": "None",
-            "horizontalAlignment": "Center"
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
         }
-    ]
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Vacaciones"
+                  },
+                  "title": "Vacaciones"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Otras licencias"
+                  },
+                  "title": "Otras licencias"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Enfermedad"
+                  },
+                  "title": "Enfermedad"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Accidente"
+                  },
+                  "title": "Accidente"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú Inicial"
+                  },
+                  "title": "Menú Inicial"
+                }
+
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
 }

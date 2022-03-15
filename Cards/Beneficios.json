@@ -1,142 +1,117 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.2",
-    "body": [
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
         {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "Image",
-                            "url": "$(blobUrl)/card-logo.jpg"
-                        }
-                    ],
-                    "verticalContentAlignment": "Center"
-                }
-            ]
-        },
-        {
-            "type": "TextBlock",
-            "wrap": true,
-            "text": "$(answer)",
-            "separator": true
-        },
-        {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Terminal SUBE"
-                                  },
-                                    "title": "Terminal SUBE"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Cajero automático"
-                                  },
-                                    "title": "Cajero automático"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Guardería"
-                                  },
-                                    "title": "Guardería"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Abono telefonía móvil"
-                                  },
-                                    "title": "Abono telefonía móvil"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Adelanto o cancelar en cuotas"
-                                  },
-                                    "title": "Adelanto o cancelar en cuotas"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Días de estudio adicionales Jornada Docente"
-                                  },
-                                    "title": "Días de estudio adicionales Jornada Docente"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Gastos Internet"
-                                  },
-                                    "title": "Gastos Internet"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Mudanza"
-                                  },
-                                    "title": "Mudanza"
-                                }
-                            ]
-                        }
-                    ],
-                    "width": "stretch",
-                    "spacing": "None",
-                    "horizontalAlignment": "Center"
-                }
-            ],
-            "style": "default",
-            "minHeight": "0px",
-            "spacing": "None",
-            "horizontalAlignment": "Center"
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
         }
-    ]
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Terminal SUBE"
+                  },
+                  "title": "Terminal SUBE"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Cajero automático"
+                  },
+                  "title": "Cajero automático"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Guardería"
+                  },
+                  "title": "Guardería"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Abono telefonía móvil"
+                  },
+                  "title": "Abono telefonía móvil"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Adelanto o cancelar en cuotas"
+                  },
+                  "title": "Adelanto o cancelar en cuotas"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Gastos Internet"
+                  },
+                  "title": "Gastos Internet"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Días de estudio adicionales Jornada Docente"
+                  },
+                  "title": "Días de estudio adicionales Jornada Docente"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Mudanza"
+                  },
+                  "title": "Mudanza"
+                }
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
 }

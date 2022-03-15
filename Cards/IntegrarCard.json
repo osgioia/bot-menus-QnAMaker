@@ -1,89 +1,75 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.2",
-    "body": [
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
         {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "Image",
-                            "url": "$(blobUrl)/card-logo.jpg"
-                        }
-                    ],
-                    "verticalContentAlignment": "Center"
-                }
-            ]
-        },
-        {
-            "type": "TextBlock",
-            "wrap": true,
-            "text": "$(answer)",
-            "separator": true
-        },
-        {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Información personal"
-                                  },
-                                    "title": "Información personal"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Pedido de vacaciones"
-                                  },
-                                    "title": "Pedido de vacaciones"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Mis recibos"
-                                  },
-                                    "title": "Mis recibos"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                  "data": {
-                                    "value": "Menú incial"
-                                  },
-                                    "title": "Menú incial"
-                                }
-                            ]
-                        }
-                    ],
-                    "width": "stretch"
-                }
-            ],
-            "separator": true
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
         }
-    ]
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Información personal"
+                  },
+                  "title": "Información personal"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Pedido de vacaciones"
+                  },
+                  "title": "Pedido de vacaciones"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Mis recibos"
+                  },
+                  "title": "Mis recibos"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú incial"
+                  },
+                  "title": "Menú incial"
+                }
+
+              ]
+            }
+          ],
+          "width": "stretch"
+        }
+      ],
+      "separator": true
+    }
+  ]
 }

@@ -40,24 +40,14 @@
                     "value": "Matrimonio"
                   },
                   "title": "Matrimonio"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Paternidad"
                   },
                   "title": "Paternidad"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
@@ -76,24 +66,14 @@
                     "value": "Donación de sangre"
                   },
                   "title": "Donación de sangre"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Examen"
                   },
                   "title": "Examen"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
@@ -112,24 +92,14 @@
                     "value": "Licencia jornada docente"
                   },
                   "title": "Licencia jornada docente"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Fallecimiento"
                   },
                   "title": "Fallecimiento"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
