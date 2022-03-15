@@ -152,9 +152,9 @@ namespace Microsoft.BotBuilderSamples
             {
                 await askingForHelp(turnContext, cancellationToken);
             }
-            else if (turnContext.Activity.Text.ToLower().Contains("gracias"))
+            else if (turnContext.Activity.Text.ToLower().Contains("gracias") || (turnContext.Activity.Text.ToLower().Contains("no")))
             {
-                await youAreWelcome(turnContext, cancellationToken);
+                await youAreWelcome(turnContext, userDetails, cancellationToken);
             }
             else
             {
@@ -310,9 +310,13 @@ namespace Microsoft.BotBuilderSamples
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 
-        private static async Task youAreWelcome(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        private static async Task youAreWelcome(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, CancellationToken cancellationToken)
         {
-            await turnContext.SendActivityAsync(MessageFactory.Text("Espero haber podido ayudarte 😄\n\n Nos vemos !"), cancellationToken);
+
+            string answerWelcome = "Hasta luego {name}, espero haberte ayudado.".Replace("{name}", userDetails.UserName);
+
+
+            await turnContext.SendActivityAsync(MessageFactory.Text(answerWelcome), cancellationToken);
         }
 
         private async Task askingForHelp(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)

@@ -9,8 +9,8 @@ namespace QnABot.ContextServices
 {
     public class ContextUserService
     {
-        private static String debugName = "Lucas Rodriguez";
-        private static String debugMail = "lucas.rodriguez@LA.LOGICALIS.COM";
+        private static String debugName = "Osvaldo Gioia";
+        private static String debugMail = "osvaldo.gioia@LA.LOGICALIS.COM";
 
         public ContextUserService()
         {
