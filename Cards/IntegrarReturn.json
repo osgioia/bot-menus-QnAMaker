@@ -43,18 +43,30 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "MenÃº inicial",
                   "data": {
-                    "value": "MenÃº inicial"
-                  }
+                    "value": "Menú Integrar"
+                  },
+                  "title": "Menú Integrar"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú inicial"
+                  },
+                  "title": "Menú inicial"
                 }
               ]
             }
           ],
-          "width": "stretch"
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
         }
       ],
-      "separator": true
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
     }
   ]
 }

@@ -57,18 +57,9 @@ namespace Microsoft.BotBuilderSamples
 
         private readonly string reportMsg = "Sí la respuesta no es lo que esperabas podes reportarla y así poder mejorar tu experiencia. Gracias!";
         private readonly string reportQuestionsMsg = "Sí ninguna de las preguntas es la que buscabas podes reportarlo y así poder mejorar tu experiencia. Gracias!";
-        private readonly string noAnswerMsg = "Todavía no tengo información sobre eso, pero sigo aprendiendo! \r\n Mientras tanto, podrías ver si la respuesta que precisas está acá: [https://metrogasar.sharepoint.com/sites/mo/SitePages/SoluIntegrar.aspx](https://metrogasar.sharepoint.com/sites/mo/SitePages/SoluIntegrar.aspx)" +
-                        $"\r\n Actualmente tengo información sobre los siguientes productos:\r\n" +
-                        $"\r\n* Recibos de sueldos\r\n" +
-                        $"\r\n* Licencias y vacaciones\r\n" +
-                        $"\r\n* Solicitudes (anticipo, anticipos en cuotas\r\n" +
-                        $"\r\n* Certificados de trabajo\r\n" +
-                        $"\r\n* Búsquedas internas\r\n" +
-                        $"\r\n* Cambio de domicilio\r\n" +
-                        $"\r\n* Inscribirse a un curso\r\n" +
-                        $"\r\n* Formularios de Evaluación de Desempeño\r\n" +
-                        $"\r\n* Formularios Objetivos\r\n" +
-                        $"\r\n Si tu consulta no se encuentra dentro de estos campos o no es suficiente la información que puedo darte, por favor comunicate con los chicos de RRHH.\r\n";
+        private readonly string noAnswerMsg = "Todavía no tengo información sobre tu consulta. Sugiero que ingreses al sharepoint a través del siguiente link [https://metrogasar.sharepoint.com/sites/mo/SitePages/SoluIntegrar.aspx](https://metrogasar.sharepoint.com/sites/mo/SitePages/SoluIntegrar.aspx)" +
+                        $" o enviar un mail a [integrar@metrogas.com.ar](integrar@metrogas.com.ar)" +
+                        $"\r\n¿Puedo ayudarte con otro tema?";
 
 
         public QnABot(  IConfiguration configuration, 
@@ -152,7 +143,10 @@ namespace Microsoft.BotBuilderSamples
             {
                 await askingForHelp(turnContext, cancellationToken);
             }
-            else if (turnContext.Activity.Text.ToLower().Contains("gracias") || (turnContext.Activity.Text.ToLower().Contains("no")))
+            else if (turnContext.Activity.Text.ToLower().Contains("gracias") || (turnContext.Activity.Text.ToLower().Contains("no")) 
+                        || (turnContext.Activity.Text.ToLower().Contains("no, gracias")) || (turnContext.Activity.Text.ToLower().Contains("chau")) 
+                        || (turnContext.Activity.Text.ToLower().Contains("saludos")) || (turnContext.Activity.Text.ToLower().Contains("bye"))
+                        || (turnContext.Activity.Text.ToLower().Contains("hasta pronto")) || (turnContext.Activity.Text.ToLower().Contains("listo")))
             {
                 await youAreWelcome(turnContext, userDetails, cancellationToken);
             }
@@ -206,9 +200,10 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("rrhh3")
                               || r.Source.ToLower().Contains("rrhh4")
                               || r.Source.ToLower().Contains("integrar")
+                              || r.Source.ToLower().Contains("integrar2")
                               || r.Source.ToLower().Contains("beneficios")
                               || r.Source.ToLower().Contains("beneficios2")
-                              || r.Source.ToLower().Contains("editorial")
+                              || r.Source.ToLower().Contains("flexible")
                               || r.Source.ToLower().Contains("saludos"))
                             select r).ToArray();
             var noAnswer = (from r in request where r.Score >= 0.7 && r.Source.ToLower().Contains("sinrespuesta") select r).ToArray();
@@ -313,7 +308,7 @@ namespace Microsoft.BotBuilderSamples
         private static async Task youAreWelcome(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, CancellationToken cancellationToken)
         {
 
-            string answerWelcome = "Hasta luego {name}, espero haberte ayudado.".Replace("{name}", userDetails.UserName);
+            string answerWelcome = "Hasta pronto 🖐 {name}, espero haberte ayudado!".Replace("{name}", userDetails.UserName);
 
 
             await turnContext.SendActivityAsync(MessageFactory.Text(answerWelcome), cancellationToken);
@@ -400,11 +395,17 @@ namespace Microsoft.BotBuilderSamples
                 case "Integrar":
                     cardResourcePath = "QnABot.Cards.IntegrarCard.json";
                     break;
+                case "Integrar2":
+                    cardResourcePath = "QnaBot.Cards.IntegrarReturn.json";
+                    break;
                 case "Beneficios":
                     cardResourcePath = "QnABot.Cards.Beneficios.json";
                     break;
                 case "Beneficios2":
                     cardResourcePath = "QnABot.Cards.BeneficiosReturn.json";
+                    break;
+                case "Flexible":
+                    cardResourcePath = "QnABot.Cards.FlexibleCard.json";
                     break;
                 default:
                     cardResourcePath = "QnABot.Cards.BancosCard.json";

@@ -95,7 +95,7 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Carga de GPPO",
+                  "title": "Carga de GPO",
                   "data": {
                     "value": "Carga de GPPO"
                   }

@@ -32,12 +32,23 @@
           "type": "Column",
           "items": [
             {
-              "type": "TextBlock",
-              "text": "Puedes compartir el siguiente link con otras personas de tu empresa así puedo ayudarles también: $(appLink)",
-              "isSubtle": true,
-              "wrap": true,
-              "spacing": "Small",
-              "size": "Small"
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "NO"
+                  },
+                  "title": "No,gracias"
+                },
+                {
+                  "type": "Action.Submit",
+                  "title": "Menú inicial",
+                  "data": {
+                    "value": "Menú inicial"
+                  }
+                }
+              ]
             }
           ],
           "width": "stretch"

@@ -39,14 +39,14 @@
                   "data": {
                     "value": "NO"
                   },
-                  "title": "NO"
+                  "title": "No,gracias"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Menú otras licencias"
                   },
-                  "title": "Menú otras licencias"
+                  "title": "Menú Licencias Especiales"
                 },
                 {
                   "type": "Action.Submit",

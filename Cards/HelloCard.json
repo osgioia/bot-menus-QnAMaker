@@ -28,32 +28,6 @@
       "actions": [
         {
           "type": "Action.Submit",
-          "title": "Bancos",
-          "data": {
-            "value": "Bancos"
-          }
-        },
-        {
-          "type": "Action.Submit",
-          "title": "Usuario de Red",
-          "data": {
-            "value": "Usuario de Red"
-          }
-        },
-        {
-          "type": "Action.Submit",
-          "title": "Licencias",
-          "data": {
-            "value": "Licencias"
-          }
-        }
-      ]
-    },
-    {
-      "type": "ActionSet",
-      "actions": [
-        {
-          "type": "Action.Submit",
           "title": "RRHH",
           "data": {
             "value": "RRHH"
@@ -68,16 +42,44 @@
         },
         {
           "type": "Action.Submit",
+          "title": "Licencias",
+          "data": {
+            "value": "Licencias"
+          }
+        },
+        {
+          "type": "Action.Submit",
           "title": "Beneficios",
           "data": {
             "value": "Beneficios"
           }
-        },
+        }
+      ]
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+
+
         {
           "type": "Action.Submit",
           "title": "Salud Ocupacional",
           "data": {
             "value": "Salud Ocupacional"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "Bancos",
+          "data": {
+            "value": "Bancos"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "Usuario de Red",
+          "data": {
+            "value": "Usuario de Red"
           }
         }
       ]

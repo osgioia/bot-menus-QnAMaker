@@ -37,24 +37,36 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "NO"
+                    "value": "Almuerzo Flexible"
                   },
-                  "title": "No,gracias"
+                  "title": "Almuerzo Flexible"
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Menú inicial",
                   "data": {
-                    "value": "Menú inicial"
-                  }
+                    "value": "Horario de Ingreso Flexible"
+                  },
+                  "title": "Horario de Ingreso Flexible"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Viernes Flexible"
+                  },
+                  "title": "Viernes Flexible"
                 }
               ]
             }
           ],
-          "width": "stretch"
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
         }
       ],
-      "separator": true
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
     }
   ]
 }
