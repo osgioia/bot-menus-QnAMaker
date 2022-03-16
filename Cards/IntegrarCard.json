@@ -58,9 +58,16 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Menú incial"
+                    "value": "Certificado Trabajo"
                   },
-                  "title": "Menú incial"
+                  "title": "Certificado Trabajo"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú inicial"
+                  },
+                  "title": "Menú inicial"
                 }
 
               ]

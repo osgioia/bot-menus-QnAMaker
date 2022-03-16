@@ -396,7 +396,7 @@ namespace Microsoft.BotBuilderSamples
                     cardResourcePath = "QnABot.Cards.IntegrarCard.json";
                     break;
                 case "Integrar2":
-                    cardResourcePath = "QnaBot.Cards.IntegrarReturn.json";
+                    cardResourcePath = "QnABot.Cards.IntegrarReturn.json";
                     break;
                 case "Beneficios":
                     cardResourcePath = "QnABot.Cards.Beneficios.json";
