@@ -80,7 +80,15 @@
                   "data": {
                     "value": "Aguinaldo"
                   }
+                },
+                {
+                  "type": "Action.Submit",
+                  "title": "Búsquedas Internas",
+                  "data": {
+                    "value": "Búsquedas Internas"
+                  }
                 }
+                
               ]
             },
             {
@@ -107,6 +115,14 @@
                     "value": "Evaluación Desempeño"
                   }
                 },
+                {
+                  "type": "Action.Submit",
+                  "title": "Formación",
+                  "data": {
+                    "value": "Formación"
+                  }
+                },
+                
                 {
                   "type": "Action.Submit",
                   "title": "Menú inicial",
