@@ -1,0 +1,79 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Realizar Cursos"
+                  },
+                  "title": "Realizar Cursos"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Cursos Disponibles"
+                  },
+                  "title": "Cursos Disponibles"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Inscribirme en un curso"
+                  },
+                  "title": "Inscribirme en un curso"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "RRHH"
+                  },
+                  "title": "RRHH"
+                }
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
+}
