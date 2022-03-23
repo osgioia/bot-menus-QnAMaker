@@ -1,0 +1,79 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Información para pago"
+                  },
+                  "title": "Información para pago"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Cálculo"
+                  },
+                  "title": "Cálculo"
+                },
+                {
+                  "type": "Action.Submit",
+                  "title": "Franco Compensatorios",
+                  "data": {
+                    "value": "Franco Compensatorios"
+                  }
+                },
+                {
+                  "type": "Action.Submit",
+                  "title": "RRHH",
+                  "data": {
+                    "value": "RRHH"
+                  }
+                }
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
+}
