@@ -46,7 +46,7 @@
                   "data": {
                     "value": "Menú Licencias"
                   },
-                  "title": "Menú Licencias"
+                  "title": "Licencias"
                 },
                 {
                   "type": "Action.Submit",

@@ -44,16 +44,16 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Menú Integrar"
+                    "value": "MenÃº Integrar"
                   },
-                  "title": "Menú Integrar"
+                  "title": "Integrar"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Menú inicial"
+                    "value": "MenÃº inicial"
                   },
-                  "title": "Menú inicial"
+                  "title": "MenÃº inicial"
                 }
               ]
             }

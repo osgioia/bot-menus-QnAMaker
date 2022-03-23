@@ -46,14 +46,14 @@
                   "data": {
                     "value": "Menú otras licencias"
                   },
-                  "title": "Menú Licencias Especiales"
+                  "title": "Licencias Especiales"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Menú Licencias"
                   },
-                  "title": "Menú Licencias"
+                  "title": "Licencias"
                 },
                 {
                   "type": "Action.Submit",
