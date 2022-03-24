@@ -199,6 +199,8 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("rrhh2")
                               || r.Source.ToLower().Contains("rrhh3")
                               || r.Source.ToLower().Contains("rrhh4")
+                              || r.Source.ToLower().Contains("rrhhinscripcion")
+                              || r.Source.ToLower().Contains("rrhhformacion")
                               || r.Source.ToLower().Contains("horas extras2")
                               || r.Source.ToLower().Contains("integrar")
                               || r.Source.ToLower().Contains("integrar2")
@@ -393,6 +395,12 @@ namespace Microsoft.BotBuilderSamples
                     break;
                 case "RRHH4":
                     cardResourcePath = "QnABot.Cards.RRHHReturn.json";
+                    break;
+                case "RRHHInscripcion":
+                    cardResourcePath = "QnABot.Cards.RcCdInscribirmeRRHH.json";
+                    break;
+                case "RRHHFormacion":
+                    cardResourcePath = "QnABot.Cards.FormacionRRHH.json";
                     break;
                 case "Horas Extras2":
                     cardResourcePath = "QnABot.Cards.HorasExtrasRRHHInicial.json";

@@ -13,9 +13,14 @@
     <Content Remove="Cards\Beneficios.json" />
     <Content Remove="Cards\BeneficiosReturn.json" />
     <Content Remove="Cards\FlexibleCard.json" />
+    <Content Remove="Cards\FormacionRRHH.json" />
     <Content Remove="Cards\HelloCard.json" />
+    <Content Remove="Cards\horarioFlexibleBeneficios.json" />
     <Content Remove="Cards\HorasExtras.json" />
+    <Content Remove="Cards\HorasExtrasRRHH.json" />
+    <Content Remove="Cards\HorasExtrasRRHHInicial.json" />
     <Content Remove="Cards\IntegrarCard.json" />
+    <Content Remove="Cards\IntegrarInicial.json" />
     <Content Remove="Cards\IntegrarReturn.json" />
     <Content Remove="Cards\LicenciasCard.json" />
     <Content Remove="Cards\LicenciasReturn.json" />
@@ -23,6 +28,7 @@
     <Content Remove="Cards\NotifyCard.json" />
     <Content Remove="Cards\OtrasLicencias_LicenciasReturn.json" />
     <Content Remove="Cards\OtrasLicenciasCard.json" />
+    <Content Remove="Cards\RcCdInscribirmeRRHH.json" />
     <Content Remove="Cards\RRHHCard.json" />
     <Content Remove="Cards\RRHHReturn.json" />
     <Content Remove="Cards\WelcomeCard.json" />
@@ -35,8 +41,13 @@
     <EmbeddedResource Include="Cards\Beneficios.json" />
     <EmbeddedResource Include="Cards\BeneficiosReturn.json" />
     <EmbeddedResource Include="Cards\FlexibleCard.json" />
+    <EmbeddedResource Include="Cards\FormacionRRHH.json" />
     <EmbeddedResource Include="Cards\HelloCard.json" />
     <EmbeddedResource Include="Cards\AnswerCard.json" />
+    <EmbeddedResource Include="Cards\horarioFlexibleBeneficios.json" />
+    <EmbeddedResource Include="Cards\HorasExtrasRRHH.json" />
+    <EmbeddedResource Include="Cards\HorasExtrasRRHHInicial.json" />
+    <EmbeddedResource Include="Cards\IntegrarInicial.json" />
     <EmbeddedResource Include="Cards\IntegrarReturn.json" />
     <EmbeddedResource Include="Cards\NotifyCard.json" />
     <EmbeddedResource Include="Cards\HorasExtras.json" />
@@ -46,6 +57,7 @@
     <EmbeddedResource Include="Cards\MenúInicailReturn.json" />
     <EmbeddedResource Include="Cards\OtrasLicencias_LicenciasReturn.json" />
     <EmbeddedResource Include="Cards\OtrasLicenciasCard.json" />
+    <EmbeddedResource Include="Cards\RcCdInscribirmeRRHH.json" />
     <EmbeddedResource Include="Cards\RRHHCard.json" />
     <EmbeddedResource Include="Cards\RRHHReturn.json" />
     <EmbeddedResource Include="Cards\WelcomeCard.json" />
@@ -73,5 +85,5 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" cards_4welcomecard_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

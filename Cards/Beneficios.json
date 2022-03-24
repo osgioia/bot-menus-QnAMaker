@@ -63,7 +63,7 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Abono telefonía móvil"
+                    "value": "telefonía móvil"
                   },
                   "title": "Abono telefonía móvil"
                 },
