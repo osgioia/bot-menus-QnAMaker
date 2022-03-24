@@ -54,6 +54,13 @@
                   "data": {
                     "value": "Franco Compensatorios"
                   }
+                },
+                {
+                  "type": "Action.Submit",
+                  "title": "RRHH",
+                  "data": {
+                    "value": "RRHH"
+                  }
                 }
               ]
             }

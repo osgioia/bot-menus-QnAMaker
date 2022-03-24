@@ -199,11 +199,13 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("rrhh2")
                               || r.Source.ToLower().Contains("rrhh3")
                               || r.Source.ToLower().Contains("rrhh4")
+                              || r.Source.ToLower().Contains("horas extras2")
                               || r.Source.ToLower().Contains("integrar")
                               || r.Source.ToLower().Contains("integrar2")
                               || r.Source.ToLower().Contains("beneficios")
                               || r.Source.ToLower().Contains("beneficios2")
                               || r.Source.ToLower().Contains("flexible")
+                              || r.Source.ToLower().Contains("flexible2")
                               || r.Source.ToLower().Contains("saludos"))
                             select r).ToArray();
             var noAnswer = (from r in request where r.Score >= 0.7 && r.Source.ToLower().Contains("sinrespuesta") select r).ToArray();
@@ -392,6 +394,9 @@ namespace Microsoft.BotBuilderSamples
                 case "RRHH4":
                     cardResourcePath = "QnABot.Cards.RRHHReturn.json";
                     break;
+                case "Horas Extras2":
+                    cardResourcePath = "QnABot.Cards.HorasExtrasRRHHInicial.json";
+                    break;
                 case "Integrar":
                     cardResourcePath = "QnABot.Cards.IntegrarCard.json";
                     break;
@@ -406,6 +411,9 @@ namespace Microsoft.BotBuilderSamples
                     break;
                 case "Flexible":
                     cardResourcePath = "QnABot.Cards.FlexibleCard.json";
+                    break;
+                case "Flexible2":
+                    cardResourcePath = "QnABot.Cards.horarioFlexibleBeneficios.json";
                     break;
                 default:
                     cardResourcePath = "QnABot.Cards.BancosCard.json";
