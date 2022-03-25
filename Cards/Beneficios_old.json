@@ -1,0 +1,204 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Terminal SUBE"
+                  },
+                  "title": "Terminal SUBE"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Cajero automático"
+                  },
+                  "title": "Cajero automático"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Guardería"
+                  },
+                  "title": "Guardería"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "telefonía móvil"
+                  },
+                  "title": "Abono telefonía móvil"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Seguro de vida optativo"
+                  },
+                  "title": "Seguro de vida optativo"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Adelanto a cancelar en cuotas"
+                  },
+                  "title": "Adelanto a cancelar en cuotas"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Gastos Internet"
+                  },
+                  "title": "Gastos Internet"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Consumo de GAS"
+                  },
+                  "title": "Consumo de GAS"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Estacionamiento"
+                  },
+                  "title": "Estacionamiento"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Estimulo Estudiante Ingenieria"
+                  },
+                  "title": "Estimulo Estudiante Ingenieria"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Promoción y Movilidad interna"
+                  },
+                  "title": "Promoción y Movilidad interna"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Prestadora médica"
+                  },
+                  "title": "Prestadora médica"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Gimnasios"
+                  },
+                  "title": "Gimnasios"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Chequeos médicos"
+                  },
+                  "title": "Chequeos médicos"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Cobertura médica Internacional"
+                  },
+                  "title": "Cobertura médica Internacional"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Bicicletas y Motos"
+                  },
+                  "title": "Bicicletas y Motos"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Horario Flexible"
+                  },
+                  "title": "Horario Flexible"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Voluntariado"
+                  },
+                  "title": "Voluntariado"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Día del trabajador GAS"
+                  },
+                  "title": "Día del trabajador GAS"
+                }
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
+}

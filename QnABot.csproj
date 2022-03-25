@@ -11,7 +11,10 @@
     <Content Remove="Cards\BancosCard.json" />
     <Content Remove="Cards\BancosReturn.json" />
     <Content Remove="Cards\Beneficios.json" />
+    <Content Remove="Cards\Beneficios2.json" />
+    <Content Remove="Cards\Beneficios3.json" />
     <Content Remove="Cards\BeneficiosReturn.json" />
+    <Content Remove="Cards\Beneficios_old.json" />
     <Content Remove="Cards\FlexibleCard.json" />
     <Content Remove="Cards\FormacionRRHH.json" />
     <Content Remove="Cards\HelloCard.json" />
@@ -39,6 +42,9 @@
    <EmbeddedResource Include="Cards\BancosCard.json" />
     <EmbeddedResource Include="Cards\BancosReturn.json" />
     <EmbeddedResource Include="Cards\Beneficios.json" />
+    <EmbeddedResource Include="Cards\Beneficios2.json" />
+    <EmbeddedResource Include="Cards\Beneficios3.json" />
+    <EmbeddedResource Include="Cards\Beneficios_old.json" />
     <EmbeddedResource Include="Cards\BeneficiosReturn.json" />
     <EmbeddedResource Include="Cards\FlexibleCard.json" />
     <EmbeddedResource Include="Cards\FormacionRRHH.json" />

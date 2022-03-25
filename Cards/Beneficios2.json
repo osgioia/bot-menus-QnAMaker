@@ -37,30 +37,30 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Terminal SUBE"
+                    "value": "Consumo de GAS"
                   },
-                  "title": "Terminal SUBE"
+                  "title": "Consumo de GAS"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Cajero automático"
+                    "value": "Estacionamiento"
                   },
-                  "title": "Cajero automático"
+                  "title": "Estacionamiento"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Guardería"
+                    "value": "Estimulo Estudiante Ingenieria"
                   },
-                  "title": "Guardería"
+                  "title": "Estimulo Estudiante Ingenieria"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "telefonía móvil"
+                    "value": "Promoción y Movilidad interna"
                   },
-                  "title": "Abono telefonía móvil"
+                  "title": "Promoción y Movilidad interna"
                 }
               ]
             },
@@ -70,28 +70,28 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Seguro de vida optativo"
+                    "value": "Prestadora médica"
                   },
-                  "title": "Seguro de vida optativo"
+                  "title": "Prestadora médica"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Adelanto a cancelar en cuotas"
+                    "value": "Gimnasios"
                   },
-                  "title": "Adelanto a cancelar en cuotas"
+                  "title": "Gimnasios"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Gastos Internet"
+                    "value": "Chequeos médicos"
                   },
-                  "title": "Gastos Internet"
+                  "title": "Chequeos médicos"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Beneficios2"
+                    "value": "Beneficios3"
                   },
                   "title": "Más..."
                 }

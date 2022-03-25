@@ -206,6 +206,8 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("integrar2")
                               || r.Source.ToLower().Contains("beneficios")
                               || r.Source.ToLower().Contains("beneficios2")
+                              || r.Source.ToLower().Contains("beneficiosnewcard2")
+                              || r.Source.ToLower().Contains("beneficiosnewcard3")
                               || r.Source.ToLower().Contains("flexible")
                               || r.Source.ToLower().Contains("flexible2")
                               || r.Source.ToLower().Contains("saludos"))
@@ -416,6 +418,12 @@ namespace Microsoft.BotBuilderSamples
                     break;
                 case "Beneficios2":
                     cardResourcePath = "QnABot.Cards.BeneficiosReturn.json";
+                    break;
+                case "BeneficiosNewCard2":
+                    cardResourcePath = "QnABot.Cards.Beneficios2.json";
+                    break;
+                case "BeneficiosNewCard3":
+                    cardResourcePath = "QnABot.Cards.Beneficios3.json";
                     break;
                 case "Flexible":
                     cardResourcePath = "QnABot.Cards.FlexibleCard.json";
