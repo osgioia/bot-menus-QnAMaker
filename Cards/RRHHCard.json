@@ -54,19 +54,19 @@
                     "value": "Cierre vedades para liquidación"
                   },
                   "title": "Cierre Novedades para liquidación"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Fecha de Pago"
                   },
                   "title": "Fecha de Pago"
-                },
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
                 {
                   "type": "Action.Submit",
                   "title": "Recibo digital",
@@ -87,13 +87,7 @@
                   "data": {
                     "value": "Ganancias"
                   }
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
+                },{
                   "type": "Action.Submit",
                   "data": {
                     "value": "Anticipos"
@@ -106,7 +100,12 @@
                   "data": {
                     "value": "Búsquedas Internas"
                   }
-                },
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
                 {
                   "type": "Action.Submit",
                   "title": "Carga de GPO",
