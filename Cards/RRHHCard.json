@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.4",
+  "version": "1.2",
   "body": [
     {
       "type": "ColumnSet",
@@ -102,24 +102,18 @@
                 },
                 {
                   "type": "Action.Submit",
+                  "title": "Búsquedas Internas",
+                  "data": {
+                    "value": "Búsquedas Internas"
+                  }
+                },
+                {
+                  "type": "Action.Submit",
                   "title": "Carga de GPO",
                   "data": {
                     "value": "Carga de GPPO"
                   }
                 },
-                {
-                  "type": "Action.Submit",
-                  "title": "Búsquedas Internas",
-                  "data": {
-                    "value": "Búsquedas Internas"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-
                 {
                   "type": "Action.Submit",
                   "title": "Evaluación Desempeño",
