@@ -37,20 +37,6 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Terminal SUBE"
-                  },
-                  "title": "Terminal SUBE"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Cajero automático"
-                  },
-                  "title": "Cajero automático"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
                     "value": "Guardería"
                   },
                   "title": "Guardería"
@@ -61,19 +47,20 @@
                     "value": "telefonía móvil"
                   },
                   "title": "Abono telefonía móvil"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
+                },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Seguro de vida optativo"
                   },
                   "title": "Seguro de vida optativo"
-                },
+                }
+
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
                 {
                   "type": "Action.Submit",
                   "data": {
@@ -84,9 +71,9 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Gastos Internet"
+                    "value": "Acuerdo con Universidades"
                   },
-                  "title": "Gastos Internet"
+                  "title": "Acuerdo con Universidades"
                 },
                 {
                   "type": "Action.Submit",

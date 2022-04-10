@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.2",
+  "version": "1.4",
   "body": [
     {
       "type": "ColumnSet",
@@ -31,39 +31,6 @@
         {
           "type": "Column",
           "items": [
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Consumo de GAS"
-                  },
-                  "title": "Consumo de GAS"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Estacionamiento"
-                  },
-                  "title": "Estacionamiento"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Estimulo Estudiante Ingenieria"
-                  },
-                  "title": "Estimulo Estudiante Ingenieria"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Promoción y Movilidad interna"
-                  },
-                  "title": "Promoción y Movilidad interna"
-                }
-              ]
-            },
             {
               "type": "ActionSet",
               "actions": [

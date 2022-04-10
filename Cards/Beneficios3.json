@@ -67,7 +67,6 @@
             {
               "type": "ActionSet",
               "actions": [
-
                 {
                   "type": "Action.Submit",
                   "data": {

@@ -37,30 +37,23 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Realizar Cursos"
+                    "value": "Mis cursos pendientes"
                   },
-                  "title": "Realizar Cursos"
+                  "title": "Mis cursos pendientes"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Cursos Disponibles"
+                    "value": "Estimulo estudiante ingenieria"
                   },
-                  "title": "Cursos Disponibles"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Inscribirme en un curso"
-                  },
-                  "title": "Inscribirme en un curso"
+                  "title": "Estimulo estudiante ingenieria"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "RRHH"
                   },
-                  "title": "RRHH"
+                  "title": "Varios RRHH"
                 }
               ]
             }

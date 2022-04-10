@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.2",
+  "version": "1.4",
   "body": [
     {
       "type": "ColumnSet",
@@ -83,12 +83,11 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Búsquedas Internas",
+                  "title": "Ganancias",
                   "data": {
-                    "value": "Búsquedas Internas"
+                    "value": "Ganancias"
                   }
                 }
-                
               ]
             },
             {
@@ -110,6 +109,19 @@
                 },
                 {
                   "type": "Action.Submit",
+                  "title": "Búsquedas Internas",
+                  "data": {
+                    "value": "Búsquedas Internas"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+
+                {
+                  "type": "Action.Submit",
                   "title": "Evaluación Desempeño",
                   "data": {
                     "value": "Evaluación Desempeño"
@@ -122,7 +134,6 @@
                     "value": "Formación"
                   }
                 },
-                
                 {
                   "type": "Action.Submit",
                   "title": "Menú inicial",

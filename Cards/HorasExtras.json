@@ -57,7 +57,7 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "RRHH",
+                  "title": "Varios RRHH",
                   "data": {
                     "value": "RRHH"
                   }
