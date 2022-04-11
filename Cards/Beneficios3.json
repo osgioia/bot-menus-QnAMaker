@@ -54,13 +54,6 @@
                     "value": "Horario Flexible"
                   },
                   "title": "Horario Flexible"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Voluntariado"
-                  },
-                  "title": "Voluntariado"
                 }
               ]
             },
