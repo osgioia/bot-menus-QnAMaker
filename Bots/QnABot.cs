@@ -123,7 +123,7 @@ namespace Microsoft.BotBuilderSamples
                 }
                 else
                 {
-                    string notAuthorize = "No esta autorizado a utilizar el servicio de Logicalis.";
+                    string notAuthorize = "No esta autorizado a utilizar el servicio de Metrogas.";
                     SaveQnA(turnContext.Activity.Text, notAuthorize, 0, "not_authorized", userDetails);
                     await turnContext.SendActivityAsync(MessageFactory.Text(notAuthorize), cancellationToken);
                 }

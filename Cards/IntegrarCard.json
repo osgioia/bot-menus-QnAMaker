@@ -51,7 +51,7 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Mis recibos"
+                    "value": "Recibo digital"
                   },
                   "title": "Mis recibos"
                 },
