@@ -34,6 +34,7 @@
     <Content Remove="Cards\PrestadoraMedicaCard.json" />
     <Content Remove="Cards\PrestadoraMedicaCardReturn.json" />
     <Content Remove="Cards\RcCdInscribirmeRRHH.json" />
+    <Content Remove="Cards\RRHHCard.data.json" />
     <Content Remove="Cards\RRHHCard.json" />
     <Content Remove="Cards\RRHHReturn.json" />
     <Content Remove="Cards\WelcomeCard.json" />

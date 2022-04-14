@@ -57,9 +57,9 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Menú inicial",
+                  "title": "Menú Inicial",
                   "data": {
-                    "value": "Menú inicial"
+                    "value": "Menú Inicial"
                   }
                 }
               ]

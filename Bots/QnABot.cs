@@ -434,10 +434,10 @@ namespace Microsoft.BotBuilderSamples
                     cardResourcePath = "QnABot.Cards.horarioFlexibleBeneficios.json";
                     break;
                 case "PrestadoraMedica":
-                    cardResourcePath = "QnABot.Cards.PrestadoraMedica.json";
+                    cardResourcePath = "QnABot.Cards.PrestadoraMedicaCard.json";
                     break;
                 case "PrestadoraMedica2":
-                    cardResourcePath = "QnABot.Cards.PrestadoraMedica2.json";
+                    cardResourcePath = "QnABot.Cards.PrestadoraMedicaCardReturn.json";
                     break;
                 default:
                     cardResourcePath = "QnABot.Cards.BancosCard.json";
