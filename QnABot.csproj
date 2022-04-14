@@ -31,6 +31,8 @@
     <Content Remove="Cards\NotifyCard.json" />
     <Content Remove="Cards\OtrasLicencias_LicenciasReturn.json" />
     <Content Remove="Cards\OtrasLicenciasCard.json" />
+    <Content Remove="Cards\PrestadoraMedicaCard.json" />
+    <Content Remove="Cards\PrestadoraMedicaCardReturn.json" />
     <Content Remove="Cards\RcCdInscribirmeRRHH.json" />
     <Content Remove="Cards\RRHHCard.json" />
     <Content Remove="Cards\RRHHReturn.json" />
@@ -63,6 +65,8 @@
     <EmbeddedResource Include="Cards\MenúInicailReturn.json" />
     <EmbeddedResource Include="Cards\OtrasLicencias_LicenciasReturn.json" />
     <EmbeddedResource Include="Cards\OtrasLicenciasCard.json" />
+    <EmbeddedResource Include="Cards\PrestadoraMedicaCard.json" />
+    <EmbeddedResource Include="Cards\PrestadoraMedicaCardReturn.json" />
     <EmbeddedResource Include="Cards\RcCdInscribirmeRRHH.json" />
     <EmbeddedResource Include="Cards\RRHHCard.json" />
     <EmbeddedResource Include="Cards\RRHHReturn.json" />

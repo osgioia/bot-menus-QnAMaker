@@ -37,30 +37,30 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Prestadora médica"
+                    "value": "No"
                   },
-                  "title": "Prestadora médica"
+                  "title": "No, gracias"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Gimnasios"
+                    "value": "Prestadora Medica"
                   },
-                  "title": "Gimnasios"
+                  "title": "Prestadora"
                 },
                 {
                   "type": "Action.Submit",
+                  "title": "Beneficios",
                   "data": {
-                    "value": "Chequeos médicos"
-                  },
-                  "title": "Chequeos médicos"
+                    "value": "Beneficios"
+                  }
                 },
                 {
                   "type": "Action.Submit",
+                  "title": "Men� inicial",
                   "data": {
-                    "value": "Beneficios3"
-                  },
-                  "title": "Más..."
+                    "value": "Men� inicial"
+                  }
                 }
               ]
             }

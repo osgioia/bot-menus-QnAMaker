@@ -1,0 +1,117 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.4",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Planes y coberturas"
+                  },
+                  "title": "Planes y coberturas"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Alta o modificación familiar"
+                  },
+                  "title": "Alta o modificación familiar"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Baja familiar prestadora médica"
+                  },
+                  "title": "Baja familiar"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Credencial digital"
+                  },
+                  "title": "Credencial digital"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Adherentes"
+                  },
+                  "title": "Adherente"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Cobertura Internacional"
+                  },
+                  "title": "Cobertura Internacional"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Unificación aportes"
+                  },
+                  "title": "Unificación aportes"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Canal exclusivo consultas"
+                  },
+                  "title": "Canal exclusivo consultas"
+                }
+              ]
+            }
+          ],
+          "width": "stretch",
+          "spacing": "None",
+          "horizontalAlignment": "Center"
+        }
+      ],
+      "style": "default",
+      "minHeight": "0px",
+      "spacing": "None",
+      "horizontalAlignment": "Center"
+    }
+  ]
+}
