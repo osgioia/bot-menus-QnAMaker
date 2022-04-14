@@ -37,6 +37,8 @@
     <Content Remove="Cards\RRHHCard.data.json" />
     <Content Remove="Cards\RRHHCard.json" />
     <Content Remove="Cards\RRHHReturn.json" />
+    <Content Remove="Cards\SaludOcupacionalCard.json" />
+    <Content Remove="Cards\SaludOcupacionalCardReturn.json" />
     <Content Remove="Cards\WelcomeCard.json" />
     <Content Remove="Cards\SelectQuestionCard.json" />
   </ItemGroup>
@@ -71,6 +73,8 @@
     <EmbeddedResource Include="Cards\RcCdInscribirmeRRHH.json" />
     <EmbeddedResource Include="Cards\RRHHCard.json" />
     <EmbeddedResource Include="Cards\RRHHReturn.json" />
+    <EmbeddedResource Include="Cards\SaludOcupacionalCard.json" />
+    <EmbeddedResource Include="Cards\SaludOcupacionalCardReturn.json" />
     <EmbeddedResource Include="Cards\WelcomeCard.json" />
     <EmbeddedResource Include="Cards\SelectQuestionCard.json" />
   </ItemGroup>

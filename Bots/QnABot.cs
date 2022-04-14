@@ -212,6 +212,8 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("flexible2")
                               || r.Source.ToLower().Contains("prestadoramedica")
                               || r.Source.ToLower().Contains("prestadoramedica2")
+                              || r.Source.ToLower().Contains("saludocupacional")
+                              || r.Source.ToLower().Contains("saludocupacional2")
                               || r.Source.ToLower().Contains("saludos"))
                             select r).ToArray();
             var noAnswer = (from r in request where r.Score >= 0.7 && r.Source.ToLower().Contains("sinrespuesta") select r).ToArray();
@@ -438,6 +440,12 @@ namespace Microsoft.BotBuilderSamples
                     break;
                 case "PrestadoraMedica2":
                     cardResourcePath = "QnABot.Cards.PrestadoraMedicaCardReturn.json";
+                    break;
+                case "SaludOcupacional":
+                    cardResourcePath = "QnABot.Cards.SaludOcupacionalCard.json";
+                    break;
+                case "SaludOcupacional2":
+                    cardResourcePath = "QnABot.Cards.SaludOcupacionalCardReturn.json";
                     break;
                 default:
                     cardResourcePath = "QnABot.Cards.BancosCard.json";

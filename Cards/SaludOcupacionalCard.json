@@ -37,37 +37,23 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Matrimonio"
+                    "value": "Enfermedad"
                   },
-                  "title": "Matrimonio"
+                  "title": "Enfermedad"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Paternidad"
+                    "value": "Accidente"
                   },
-                  "title": "Paternidad"
+                  "title": "Accidente"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Maternidad"
+                    "value": "Gimnasios"
                   },
-                  "title": "Maternidad"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Excedencia"
-                  },
-                  "title": "Excedencia"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Adopci贸n"
-                  },
-                  "title": "Adopci贸n"
+                  "title": "Gimnasios"
                 }
               ]
             },
@@ -77,23 +63,23 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Donaci贸n de sangre"
+                    "value": "Familiar enfermo"
                   },
-                  "title": "Donaci贸n de sangre"
+                  "title": "Familiar enfermo"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Examen"
+                    "value": "Chequeos M閐icos"
                   },
-                  "title": "Examen"
+                  "title": "Chequeos M閐icos"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Mudanza"
+                    "value": "Vacunaci髇 antigripal"
                   },
-                  "title": "Mudanza"
+                  "title": "Vacunaci髇 antigripal"
                 }
               ]
             },
@@ -103,23 +89,9 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Licencia jornada docente"
+                    "value": "羠ea Protegida"
                   },
-                  "title": "Jornada Actualizaci贸n Docente"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Fallecimiento"
-                  },
-                  "title": "Fallecimiento"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Men煤 Inicial"
-                  },
-                  "title": "Men煤 Inicial"
+                  "title": "羠ea Protegida"
                 }
               ]
             }

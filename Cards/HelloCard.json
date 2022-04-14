@@ -28,6 +28,13 @@
       "actions": [
         {
           "type": "Action.Submit",
+          "title": "Bancos",
+          "data": {
+            "value": "Bancos"
+          }
+        },
+        {
+          "type": "Action.Submit",
           "title": " Varios RRHH",
           "data": {
             "value": "RRHH"
@@ -46,33 +53,24 @@
           "data": {
             "value": "Licencias"
           }
-        },
-        {
-          "type": "Action.Submit",
-          "title": "Beneficios",
-          "data": {
-            "value": "Beneficios"
-          }
         }
       ]
     },
     {
       "type": "ActionSet",
       "actions": [
-
-
+        {
+          "type": "Action.Submit",
+          "title": "Beneficios",
+          "data": {
+            "value": "Beneficios"
+          }
+        },
         {
           "type": "Action.Submit",
           "title": "Salud Ocupacional",
           "data": {
             "value": "Salud Ocupacional"
-          }
-        },
-        {
-          "type": "Action.Submit",
-          "title": "Bancos",
-          "data": {
-            "value": "Bancos"
           }
         },
         {

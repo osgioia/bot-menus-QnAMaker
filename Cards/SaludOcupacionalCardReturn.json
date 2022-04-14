@@ -36,24 +36,24 @@
               "actions": [
                 {
                   "type": "Action.Submit",
-                  "title": "No, gracias",
                   "data": {
-                    "value": "No, Gracias"
-                  }
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Horas Extras"
+                    "value": "No, gracias"
                   },
-                  "title": "Horas Extras"
+                  "title": "No, gracias"
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "MenÃº Inicial",
                   "data": {
-                    "value": "MenÃº Inicial"
-                  }
+                    "value": "Salud ocupacional"
+                  },
+                  "title": "Salud ocupacional"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú inicial"
+                  },
+                  "title": "Menú inicial"
                 }
               ]
             }

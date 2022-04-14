@@ -57,9 +57,9 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Varios RRHH",
+                  "title": "Horas Extras",
                   "data": {
-                    "value": "RRHH"
+                    "value": "Horas Extras"
                   }
                 }
               ]
