@@ -37,7 +37,7 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Enfermedad"
+                    "value": "Enfermedad - Salud Ocupacional"
                   },
                   "title": "Enfermedad"
                 },
