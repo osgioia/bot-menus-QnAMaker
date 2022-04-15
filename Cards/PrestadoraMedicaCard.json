@@ -44,14 +44,14 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Alta o modificaci髇 familiar"
+                    "value": "Alta o modificaci贸n familiar"
                   },
-                  "title": "Alta o modificaci髇 familiar"
+                  "title": "Alta o modificaci贸n familiar"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Baja familiar prestadora m閐ica"
+                    "value": "Baja familiar prestadora m茅dica"
                   },
                   "title": "Baja familiar"
                 }
@@ -89,9 +89,9 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Unificaci髇 aportes"
+                    "value": "Unificaci贸n aportes"
                   },
-                  "title": "Unificaci髇 aportes"
+                  "title": "Unificaci贸n aportes"
                 },
                 {
                   "type": "Action.Submit",

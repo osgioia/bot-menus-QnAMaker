@@ -70,16 +70,16 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Chequeos MÈdicos"
+                    "value": "Chequeos M√©dicos"
                   },
-                  "title": "Chequeos MÈdicos"
+                  "title": "Chequeos M√©dicos"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "VacunaciÛn antigripal"
+                    "value": "Vacunaci√≥n antigripal"
                   },
-                  "title": "VacunaciÛn antigripal"
+                  "title": "Vacunaci√≥n antigripal"
                 }
               ]
             },
@@ -89,9 +89,9 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "¡rea Protegida"
+                    "value": "√Årea Protegida"
                   },
-                  "title": "¡rea Protegida"
+                  "title": "√Årea Protegida"
                 }
               ]
             }
