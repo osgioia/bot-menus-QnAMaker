@@ -148,7 +148,7 @@ namespace Microsoft.BotBuilderSamples
                         || (turnContext.Activity.Text.ToLower().Contains("saludos")) || (turnContext.Activity.Text.ToLower().Contains("bye"))
                         || (turnContext.Activity.Text.ToLower().Contains("hasta pronto")) || (turnContext.Activity.Text.ToLower().Contains("listo")))
             {
-                await youAreWelcome(turnContext, userDetails, cancellationToken);
+                await youAreWelcome(turnContext, userDetails, cancellationToken, appUrlMsTeams);
             }
             else
             {
@@ -315,13 +315,15 @@ namespace Microsoft.BotBuilderSamples
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 
-        private static async Task youAreWelcome(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, CancellationToken cancellationToken)
+        private  async Task youAreWelcome(ITurnContext<IMessageActivity> turnContext, UserDetails userDetails, CancellationToken cancellationToken, string appUrlMsTeams)
         {
 
             string answerWelcome = "Hasta pronto 🖐 {name}, espero haberte ayudado!".Replace("{name}", userDetails.UserName);
+            
+            List<Attachment> bookApprovedCard = new List<Attachment> { SelectAdaptiveCardAttachment(turnContext.Activity.Text, answerWelcome, null, appUrlMsTeams, "Saludo" ) };
 
-
-            await turnContext.SendActivityAsync(MessageFactory.Text(answerWelcome), cancellationToken);
+            //await turnContext.SendActivityAsync(MessageFactory.Text(answerWelcome), cancellationToken);
+            await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 
         private async Task askingForHelp(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -446,6 +448,9 @@ namespace Microsoft.BotBuilderSamples
                     break;
                 case "SaludOcupacional2":
                     cardResourcePath = "QnABot.Cards.SaludOcupacionalCardReturn.json";
+                    break;
+                case "Saludo":
+                    cardResourcePath = "QnABot.Cards.AnswerCard.json";
                     break;
                 default:
                     cardResourcePath = "QnABot.Cards.BancosCard.json";

@@ -32,32 +32,7 @@
           "type": "Column",
           "items": [
             {
-              "type": "TextBlock",
-              "text": "$(reportMsg)",
-              "isSubtle": true,
-              "wrap": true,
-              "spacing": "Small",
-              "size": "Small"
-            }
-          ],
-          "width": "stretch"
-        },
-        {
-          "type": "Column",
-          "items": [
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "title": "Reportar",
-                  "data": {
-                    "question": "$(question)",
-                    "answer": "$(answer)"
-                  },
-                  "style": "destructive"
-                }
-              ]
+              "type": "ActionSet"
             }
           ],
           "width": "auto"
