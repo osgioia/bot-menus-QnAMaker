@@ -37,44 +37,23 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Prestadora médica"
+                    "value": "NO"
                   },
-                  "title": "Prestadora médica"
+                  "title": "No,gracias"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Gimnasios"
+                    "value": "Vacaciones"
                   },
-                  "title": "Gimnasios"
+                  "title": "Vacaciones"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Chequeos médicos"
+                    "value": "Menú inicial"
                   },
-                  "title": "Chequeos médicos"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Cobertura médica Internacional"
-                  },
-                  "title": "Cobertura médica Internacional"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Bicicletas y Motos"
-                  },
-                  "title": "Bicicletas y Motos"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Horario Flexible"
-                  },
-                  "title": "Horario Flexible"
+                  "title": "Menú inicial"
                 }
               ]
             }

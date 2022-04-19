@@ -192,6 +192,7 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("usuario de red")
                               || r.Source.ToLower().Contains("licencias")
                               || r.Source.ToLower().Contains("vacaciones")
+                              || r.Source.ToLower().Contains("vacaciones2")
                               || r.Source.ToLower().Contains("otras licencias")
                               || r.Source.ToLower().Contains("otras licencias2")
                               || r.Source.ToLower().Contains("otras licencias3")
@@ -207,7 +208,7 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("beneficios")
                               || r.Source.ToLower().Contains("beneficios2")
                               || r.Source.ToLower().Contains("beneficiosnewcard2")
-                              || r.Source.ToLower().Contains("beneficiosnewcard3")
+                             // || r.Source.ToLower().Contains("beneficiosnewcard3")
                               || r.Source.ToLower().Contains("flexible")
                               || r.Source.ToLower().Contains("flexible2")
                               || r.Source.ToLower().Contains("prestadoramedica")
@@ -381,7 +382,10 @@ namespace Microsoft.BotBuilderSamples
                     cardResourcePath = "QnABot.Cards.LicenciasCard.json";
                     break;
                 case "Vacaciones":
-                    cardResourcePath = "QnABot.Cards.LicenciasReturn.json";
+                    cardResourcePath = "QnABot.Cards.VacacionesCard.json";
+                    break;
+                case "Vacaciones2":
+                    cardResourcePath = "QnABot.Cards.VacacionesReturn.json";
                     break;
                 case "Otras Licencias":
                     cardResourcePath = "QnABot.Cards.OtrasLicenciasCard.json";

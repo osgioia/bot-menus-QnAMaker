@@ -56,18 +56,6 @@
                   "title": "Horario Flexible"
                 }
               ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Día del trabajador GAS"
-                  },
-                  "title": "Día del trabajador GAS"
-                }
-              ]
             }
           ],
           "width": "stretch",

@@ -37,44 +37,30 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Prestadora médica"
+                    "value": "Dias de vacaciones"
                   },
-                  "title": "Prestadora médica"
+                  "title": "Días de vacaciones"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Gimnasios"
+                    "value": "Gozar vacaciones"
                   },
-                  "title": "Gimnasios"
+                  "title": "Tomar vacaciones"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Chequeos médicos"
+                    "value": "Pago de vacaciones"
                   },
-                  "title": "Chequeos médicos"
+                  "title": "Pago vacaciones"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Cobertura médica Internacional"
+                    "value": "Anticipo vacaciones"
                   },
-                  "title": "Cobertura médica Internacional"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Bicicletas y Motos"
-                  },
-                  "title": "Bicicletas y Motos"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Horario Flexible"
-                  },
-                  "title": "Horario Flexible"
+                  "title": "Anticipo vacaciones"
                 }
               ]
             }
