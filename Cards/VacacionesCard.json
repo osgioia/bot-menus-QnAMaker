@@ -46,21 +46,14 @@
                   "data": {
                     "value": "Gozar vacaciones"
                   },
-                  "title": "Tomar vacaciones"
+                  "title": "Tomar días"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Pago de vacaciones"
                   },
-                  "title": "Pago vacaciones"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Anticipo vacaciones"
-                  },
-                  "title": "Anticipo vacaciones"
+                  "title": "Pago"
                 }
               ]
             }

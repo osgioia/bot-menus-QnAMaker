@@ -87,12 +87,20 @@
                   "data": {
                     "value": "Ganancias"
                   }
-                },{
+                },
+                {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Anticipos"
                   },
                   "title": "Anticipos"
+                },
+                {
+                  "type": "Action.Submit",
+                  "title": "Bancos",
+                  "data": {
+                    "value": "Bancos"
+                  }
                 },
                 {
                   "type": "Action.Submit",
