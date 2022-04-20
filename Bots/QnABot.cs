@@ -321,9 +321,8 @@ namespace Microsoft.BotBuilderSamples
 
             string answerWelcome = "Hasta pronto 🖐 {name}, espero haberte ayudado!".Replace("{name}", userDetails.UserName);
             
-            List<Attachment> bookApprovedCard = new List<Attachment> { SelectAdaptiveCardAttachment(turnContext.Activity.Text, answerWelcome, null, appUrlMsTeams, "Saludo" ) };
-
-            //await turnContext.SendActivityAsync(MessageFactory.Text(answerWelcome), cancellationToken);
+            List<Attachment> bookApprovedCard = new List<Attachment> { SelectAdaptiveCardAttachment(turnContext.Activity.Text, answerWelcome, "", appUrlMsTeams, "Saludo" ) };
+           
             await turnContext.SendActivityAsync((Activity)MessageFactory.Attachment(bookApprovedCard));
         }
 

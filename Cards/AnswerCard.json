@@ -24,21 +24,6 @@
       "wrap": true,
       "text": "$(answer)",
       "separator": true
-    },
-    {
-      "type": "ColumnSet",
-      "columns": [
-        {
-          "type": "Column",
-          "items": [
-            {
-              "type": "ActionSet"
-            }
-          ],
-          "width": "auto"
-        }
-      ],
-      "separator": true
     }
   ]
 }
