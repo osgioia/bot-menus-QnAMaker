@@ -46,14 +46,14 @@
                   "data": {
                     "value": "Horas Extras"
                   },
-                  "title": "Horas Extras"
+                  "title": "Horas extras"
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Menú inicial",
                   "data": {
-                    "value": "Menú inicial"
-                  }
+                    "value": "Menú RRHH"
+                  },
+                  "title": "Varios RRHH"
                 }
               ]
             }

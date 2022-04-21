@@ -50,17 +50,17 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Franco Compensatorios",
+                  "title": "Franco compensatorios",
                   "data": {
                     "value": "Franco Compensatorios"
                   }
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Horas Extras",
                   "data": {
-                    "value": "Horas Extras"
-                  }
+                    "value": "Menú RRHH"
+                  },
+                  "title": "Varios RRHH"
                 }
               ]
             }

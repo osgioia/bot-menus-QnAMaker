@@ -39,7 +39,7 @@
                   "data": {
                     "value": "Credencial de Ingreso"
                   },
-                  "title": "Credencial de Ingreso"
+                  "title": "Credencial de ingreso"
                 },
                 {
                   "type": "Action.Submit",
@@ -53,14 +53,14 @@
                   "data": {
                     "value": "Cierre vedades para liquidación"
                   },
-                  "title": "Cierre Novedades para liquidación"
+                  "title": "Cierre novedades para liquidación"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Fecha de Pago"
                   },
-                  "title": "Fecha de Pago"
+                  "title": "Fecha de pago"
                 }
               ]
             },
@@ -99,12 +99,12 @@
                   "type": "Action.Submit",
                   "title": "Bancos",
                   "data": {
-                    "value": "Bancos"
+                    "value": "Cambiar de banco"
                   }
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Búsquedas Internas",
+                  "title": "Búsquedas internas",
                   "data": {
                     "value": "Búsquedas Internas"
                   }
@@ -123,7 +123,7 @@
                 },
                 {
                   "type": "Action.Submit",
-                  "title": "Evaluación Desempeño",
+                  "title": "Evaluación desempeño",
                   "data": {
                     "value": "Evaluación Desempeño"
                   }
