@@ -46,7 +46,7 @@
                   "data": {
                     "value": "Horario Flexible"
                   },
-                  "title": "Horario Flexible"
+                  "title": "Horario flexible"
                 },
                 {
                   "type": "Action.Submit",

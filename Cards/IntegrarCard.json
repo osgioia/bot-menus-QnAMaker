@@ -44,16 +44,9 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Pedido de vacaciones"
-                  },
-                  "title": "Pedido de vacaciones"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
                     "value": "Recibo digital"
                   },
-                  "title": "Mis recibos"
+                  "title": "Recibo haberes"
                 },
                 {
                   "type": "Action.Submit",

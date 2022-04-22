@@ -46,7 +46,7 @@
                   "data": {
                     "value": "Otras licencias"
                   },
-                  "title": "Licencias Especiales"
+                  "title": "Licencias especiales"
                 },
                 {
                   "type": "Action.Submit",

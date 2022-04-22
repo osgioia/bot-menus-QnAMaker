@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.2",
+  "version": "1.4",
   "body": [
     {
       "type": "ColumnSet",
@@ -28,7 +28,6 @@
       "type": "Input.ChoiceSet",
       "id": "choosenQuestion",
       "style": "expanded",
-      "isMultiSelect": false,
       "choices": "$(choices)",
       "wrap": true,
       "value": "$(value)"
@@ -45,46 +44,6 @@
           }
         }
       ]
-    },
-    {
-      "type": "ColumnSet",
-      "columns": [
-        {
-          "type": "Column",
-          "items": [
-            {
-              "type": "TextBlock",
-              "text": "$(reportMsg)",
-              "isSubtle": true,
-              "wrap": true,
-              "spacing": "Small",
-              "size": "Small"
-            }
-          ],
-          "width": "stretch"
-        },
-        {
-          "type": "Column",
-          "items": [
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "title": "Reportar",
-                  "data": {
-                    "question": "$(question)",
-                    "answer": "$(answers)"
-                  },
-                  "style": "destructive"
-                }
-              ]
-            }
-          ],
-          "width": "auto"
-        }
-      ],
-      "separator": true
     }
   ]
 }

@@ -105,7 +105,7 @@
                   "data": {
                     "value": "Licencia jornada docente"
                   },
-                  "title": "Jornada Actualización Docente"
+                  "title": "Jornada actualización docente"
                 },
                 {
                   "type": "Action.Submit",

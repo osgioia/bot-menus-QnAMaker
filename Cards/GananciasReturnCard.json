@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.4",
+  "version": "1.2",
   "body": [
     {
       "type": "ColumnSet",
@@ -37,54 +37,24 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Enfermedad - Salud Ocupacional"
+                    "value": "NO"
                   },
-                  "title": "Enfermedad"
+                  "title": "No,gracias"
+                },
+
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Ganancias"
+                  },
+                  "title": "Ganancias"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Accidente"
+                    "value": "Menú RRHH"
                   },
-                  "title": "Accidente"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Familiar enfermo"
-                  },
-                  "title": "Familiar enfermo"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Chequeos Médicos"
-                  },
-                  "title": "Chequeos médicos"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Vacunación antigripal"
-                  },
-                  "title": "Vacunación antigripal"
-                },
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Área Protegida"
-                  },
-                  "title": "Área protegida"
+                  "title": "Varios RRHH"
                 }
               ]
             }

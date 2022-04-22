@@ -37,30 +37,16 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "No"
+                    "value": "Deducciones personales"
                   },
-                  "title": "No, gracias"
+                  "title": "Deducciones personales"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Prestadora Medica"
+                    "value": "Deducciones generales"
                   },
-                  "title": "Prestadora médica"
-                },
-                {
-                  "type": "Action.Submit",
-                  "title": "Beneficios",
-                  "data": {
-                    "value": "Beneficios"
-                  }
-                },
-                {
-                  "type": "Action.Submit",
-                  "title": "Menú inicial",
-                  "data": {
-                    "value": "Menú inicial"
-                  }
+                  "title": "Deducciones generales"
                 }
               ]
             }

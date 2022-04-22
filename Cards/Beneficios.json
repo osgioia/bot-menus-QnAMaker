@@ -78,9 +78,35 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Beneficios2"
+                    "value": "Prestadora médica"
                   },
-                  "title": "Más..."
+                  "title": "Prestadora médica"
+                }
+              ]
+            },
+            {
+              "type": "ActionSet",
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Gimnasios"
+                  },
+                  "title": "Gimnasios"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Bicicletas y Motos"
+                  },
+                  "title": "Estacionamiento bicis, monopatín y motos"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Horario Flexible"
+                  },
+                  "title": "Horario Flexible"
                 }
               ]
             }

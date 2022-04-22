@@ -39,21 +39,21 @@
                   "data": {
                     "value": "Almuerzo Flexible"
                   },
-                  "title": "Almuerzo Flexible"
+                  "title": "Almuerzo flexible"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Horario de Ingreso Flexible"
                   },
-                  "title": "Horario de Ingreso Flexible"
+                  "title": "Horario de ingreso flexible"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
                     "value": "Viernes Flexible"
                   },
-                  "title": "Viernes Flexible"
+                  "title": "Viernes flexible"
                 }
               ]
             }

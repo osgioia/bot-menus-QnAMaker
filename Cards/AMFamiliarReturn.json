@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.4",
+  "version": "1.2",
   "body": [
     {
       "type": "ColumnSet",
@@ -37,54 +37,37 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Enfermedad - Salud Ocupacional"
+                    "value": "No"
                   },
-                  "title": "Enfermedad"
+                  "title": "No, gracias"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Accidente"
+                    "value": "Alta o modificación familiar"
                   },
-                  "title": "Accidente"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Familiar enfermo"
-                  },
-                  "title": "Familiar enfermo"
+                  "title": "Alta o modificación familiar"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Chequeos Médicos"
+                    "value": "Prestadora médica"
                   },
-                  "title": "Chequeos médicos"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Vacunación antigripal"
-                  },
-                  "title": "Vacunación antigripal"
+                  "title": "Prestadora médica"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Área Protegida"
+                    "value": "Beneficios"
                   },
-                  "title": "Área protegida"
+                  "title": "Beneficios"
+                },
+                {
+                  "type": "Action.Submit",
+                  "data": {
+                    "value": "Menú inicial"
+                  },
+                  "title": "Menú inicial"
                 }
               ]
             }

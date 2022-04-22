@@ -1,7 +1,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.4",
+  "version": "1.2",
   "body": [
     {
       "type": "ColumnSet",
@@ -37,54 +37,30 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Enfermedad - Salud Ocupacional"
+                    "value": "Conyuge/Conviviente - Prestadora medica"
                   },
-                  "title": "Enfermedad"
+                  "title": "Cónyuge/Conviviente"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Accidente"
+                    "value": "Hijos - Prestadora medica"
                   },
-                  "title": "Accidente"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Familiar enfermo"
-                  },
-                  "title": "Familiar enfermo"
+                  "title": "Hij@s"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Chequeos Médicos"
+                    "value": "Menor bajo Guarda/Tutela - Prestadora medica"
                   },
-                  "title": "Chequeos médicos"
-                }
-              ]
-            },
-            {
-              "type": "ActionSet",
-              "actions": [
-                {
-                  "type": "Action.Submit",
-                  "data": {
-                    "value": "Vacunación antigripal"
-                  },
-                  "title": "Vacunación antigripal"
+                  "title": "Menor bajo Guarda/Tutela"
                 },
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Área Protegida"
+                    "value": "Padre/Madre - Prestadora medica"
                   },
-                  "title": "Área protegida"
+                  "title": "Padre/Madre"
                 }
               ]
             }

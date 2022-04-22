@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Cards\AMFamiliarCard.json" />
+    <Content Remove="Cards\AMFamiliarReturn.json" />
     <Content Remove="Cards\AnswerCard.json" />
     <Content Remove="Cards\BancosCard.json" />
     <Content Remove="Cards\BancosReturn.json" />
@@ -17,6 +19,8 @@
     <Content Remove="Cards\Beneficios_old.json" />
     <Content Remove="Cards\FlexibleCard.json" />
     <Content Remove="Cards\FormacionRRHH.json" />
+    <Content Remove="Cards\GananciasCard.json" />
+    <Content Remove="Cards\GananciasReturnCard.json" />
     <Content Remove="Cards\HelloCard.json" />
     <Content Remove="Cards\horarioFlexibleBeneficios.json" />
     <Content Remove="Cards\HorasExtras.json" />
@@ -28,6 +32,7 @@
     <Content Remove="Cards\LicenciasCard.json" />
     <Content Remove="Cards\LicenciasReturn.json" />
     <Content Remove="Cards\MenúInicailReturn.json" />
+    <Content Remove="Cards\NoAnswer.json" />
     <Content Remove="Cards\NotifyCard.json" />
     <Content Remove="Cards\OtrasLicencias_LicenciasReturn.json" />
     <Content Remove="Cards\OtrasLicenciasCard.json" />
@@ -46,6 +51,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ApplicationDefinition Include="Cards\AMFamiliarReturn.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+   <EmbeddedResource Include="Cards\AMFamiliarCard.json" />
    <EmbeddedResource Include="Cards\BancosCard.json" />
     <EmbeddedResource Include="Cards\BancosReturn.json" />
     <EmbeddedResource Include="Cards\Beneficios.json" />
@@ -55,6 +65,8 @@
     <EmbeddedResource Include="Cards\BeneficiosReturn.json" />
     <EmbeddedResource Include="Cards\FlexibleCard.json" />
     <EmbeddedResource Include="Cards\FormacionRRHH.json" />
+    <EmbeddedResource Include="Cards\GananciasCard.json" />
+    <EmbeddedResource Include="Cards\GananciasReturnCard.json" />
     <EmbeddedResource Include="Cards\HelloCard.json" />
     <EmbeddedResource Include="Cards\AnswerCard.json" />
     <EmbeddedResource Include="Cards\horarioFlexibleBeneficios.json" />
@@ -62,6 +74,7 @@
     <EmbeddedResource Include="Cards\HorasExtrasRRHHInicial.json" />
     <EmbeddedResource Include="Cards\IntegrarInicial.json" />
     <EmbeddedResource Include="Cards\IntegrarReturn.json" />
+    <EmbeddedResource Include="Cards\NoAnswer.json" />
     <EmbeddedResource Include="Cards\NotifyCard.json" />
     <EmbeddedResource Include="Cards\HorasExtras.json" />
     <EmbeddedResource Include="Cards\IntegrarCard.json" />

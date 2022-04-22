@@ -1,0 +1,93 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "$(blobUrl)/card-logo.jpg"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "$(answer)",
+      "separator": true
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": " Varios RRHH",
+          "data": {
+            "value": "RRHH"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "Licencias",
+          "data": {
+            "value": "Licencias"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "Beneficios",
+          "data": {
+            "value": "Beneficios"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "Integrar",
+          "data": {
+            "value": "Integrar"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "Salud ocupacional",
+          "data": {
+            "value": "Salud ocupacional"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "Usuario de red",
+          "data": {
+            "value": "Usuario de red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "Ninguno",
+          "data": {
+            "value": "Ninguno"
+          }
+        }
+      ]
+    }
+  ],
+  "type": "AdaptiveCard",
+  "version": "1.2"
+}
