@@ -51,7 +51,7 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Menor bajo Guarda/Tutela - Prestadora medica"
+                    "value": "bajo Guarda/Tutela - Prestadora medica"
                   },
                   "title": "Menor bajo Guarda/Tutela"
                 },

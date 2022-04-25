@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Cards\AMFamiliarReturn.json" />
     <Content Remove="Cards\AMFamiliarCard.json" />
     <Content Remove="Cards\AMFamiliarReturn.json" />
     <Content Remove="Cards\AnswerCard.json" />
@@ -51,10 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Include="Cards\AMFamiliarReturn.json" />
-  </ItemGroup>
-
-  <ItemGroup>
+   <EmbeddedResource Include="Cards\AMFamiliarReturn.json" />
    <EmbeddedResource Include="Cards\AMFamiliarCard.json" />
    <EmbeddedResource Include="Cards\BancosCard.json" />
     <EmbeddedResource Include="Cards\BancosReturn.json" />

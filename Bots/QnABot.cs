@@ -209,8 +209,8 @@ namespace Microsoft.BotBuilderSamples
                               || r.Source.ToLower().Contains("integrar2")
                               || r.Source.ToLower().Contains("beneficios")
                               || r.Source.ToLower().Contains("beneficios2")
-                             // || r.Source.ToLower().Contains("beneficiosnewcard2")
-                             // || r.Source.ToLower().Contains("beneficiosnewcard3")
+                              || r.Source.ToLower().Contains("amfamiliar")
+                              || r.Source.ToLower().Contains("amfamiliar2")
                               || r.Source.ToLower().Contains("flexible")
                               || r.Source.ToLower().Contains("flexible2")
                               || r.Source.ToLower().Contains("prestadoramedica")
@@ -373,8 +373,10 @@ namespace Microsoft.BotBuilderSamples
                 using (var reader = new StreamReader(stream))
                 {
                     var adaptiveCard = reader.ReadToEnd();
-                    if (question == null)
+                    if (question == null) { 
                         adaptiveCard = adaptiveCard.Replace("$(notify)", answer);
+                        adaptiveCard = adaptiveCard.Replace("$(answer)", answer);
+                    }
                     else
                     {
                         adaptiveCard = adaptiveCard.Replace("$(question)", question);
@@ -459,11 +461,11 @@ namespace Microsoft.BotBuilderSamples
                 case "Beneficios2":
                     cardResourcePath = "QnABot.Cards.BeneficiosReturn.json";
                     break;
-                case "BeneficiosNewCard2":
-                    cardResourcePath = "QnABot.Cards.Beneficios2.json";
+                case "AMFamiliar":
+                    cardResourcePath = "QnABot.Cards.AMFamiliarCard.json";
                     break;
-                case "BeneficiosNewCard3":
-                    cardResourcePath = "QnABot.Cards.Beneficios3.json";
+                case "AMFamiliar2":
+                    cardResourcePath = "QnABot.Cards.AMFamiliarReturn.json";
                     break;
                 case "Flexible":
                     cardResourcePath = "QnABot.Cards.FlexibleCard.json";

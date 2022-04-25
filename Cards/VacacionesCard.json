@@ -37,7 +37,7 @@
                 {
                   "type": "Action.Submit",
                   "data": {
-                    "value": "Dias de vacaciones"
+                    "value": "Dias de vacaciones - 1"
                   },
                   "title": "Días de vacaciones"
                 },
